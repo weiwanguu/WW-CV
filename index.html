@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wei Wang | Robotics Researcher</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f9fb;
+      color: #222;
+      line-height: 1.7;
+    }
+
+    a {
+      color: #1f5f99;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    /* ---------- Navigation ---------- */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid #e8e8e8;
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 68px;
+    }
+
+    .nav-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #222;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #333;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    /* ---------- Hero ---------- */
+
+    .hero {
+      padding: 75px 0 60px;
+      background: #ffffff;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 230px 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .profile-photo {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 6px solid #f0f3f7;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    }
+
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: 2.7rem;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 18px;
+    }
+
+    .research-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #1f5f99;
+      margin-bottom: 18px;
+    }
+
+    .hero-description {
+      max-width: 780px;
+      color: #444;
+    }
+
+    .buttons {
+      margin-top: 25px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 6px;
+      background: #1f5f99;
+      color: white;
+      font-weight: 600;
+    }
+
+    .button.secondary {
+      background: white;
+      color: #1f5f99;
+      border: 1px solid #1f5f99;
+    }
+
+    .button:hover {
+      text-decoration: none;
+      opacity: 0.9;
+    }
+
+    /* ---------- General Sections ---------- */
+
+    section {
+      padding: 65px 0;
+    }
+
+    section:nth-child(even) {
+      background: #ffffff;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-top: 0;
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 55px;
+      height: 3px;
+      background: #1f5f99;
+      margin-top: 10px;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+    }
+
+    /* ---------- About ---------- */
+
+    .about-text {
+      max-width: 900px;
+      font-size: 1.03rem;
+      color: #444;
+    }
+
+    /* ---------- Research Interests ---------- */
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .research-card {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      border: 1px solid #e8edf3;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.035);
+    }
+
+    .research-card h3 {
+      color: #1f5f99;
+      font-size: 1.05rem;
+    }
+
+    /* ---------- Publications ---------- */
+
+    .publication {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 25px;
+      margin-bottom: 35px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #e6e6e6;
+    }
+
+    .publication img {
+      width: 190px;
+      height: 125px;
+      object-fit: cover;
+      border-radius: 7px;
+      background: #eee;
+    }
+
+    .publication-title {
+      font-weight: 700;
+      font-size: 1.08rem;
+      color: #222;
+    }
+
+    .authors {
+      margin-top: 5px;
+      color: #555;
+    }
+
+    .venue {
+      margin-top: 4px;
+      font-style: italic;
+      color: #666;
+    }
+
+    .pub-links {
+      margin-top: 8px;
+    }
+
+    .pub-links a {
+      margin-right: 14px;
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-left: 7px;
+      padding: 2px 8px;
+      font-size: 0.75rem;
+      border-radius: 10px;
+      color: #1f5f99;
+      background: #eaf3fb;
+      vertical-align: middle;
+    }
+
+    /* ---------- Projects ---------- */
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .project-card {
+      background: white;
+      border: 1px solid #e4e9ef;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      background: #e9ecef;
+    }
+
+    .project-content {
+      padding: 20px;
+    }
+
+    /* ---------- Awards ---------- */
+
+    .timeline-item {
+      margin-bottom: 25px;
+    }
+
+    .timeline-year {
+      display: inline-block;
+      min-width: 70px;
+      font-weight: 700;
+      color: #1f5f99;
+    }
+
+    /* ---------- Contact ---------- */
+
+    .contact-box {
+      background: #fff;
+      border: 1px solid #e5e9ee;
+      border-radius: 10px;
+      padding: 30px;
+      max-width: 800px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      color: #777;
+      font-size: 0.9rem;
+      border-top: 1px solid #e8e8e8;
+      background: white;
+    }
+
+    /* ---------- Responsive ---------- */
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .profile-photo {
+        margin: 0 auto;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .research-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .publication {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-container {
+        flex-direction: column;
+        padding: 12px 0;
+      }
+
+      .nav-links {
+        justify-content: center;
+        gap: 14px;
+      }
+
+      .research-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 2.1rem;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="container nav-container">
+      <div class="nav-name">Wei Wang</div>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#awards">Awards</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+
+      <div>
+        <!-- 把 photo.jpg 替换成你的个人照片 -->
+        <img src="images/photo.png" alt="Wei Wang" class="profile-photo">
+      </div>
+
+      <div>
+        <h1>Wei Wang</h1>
+
+        <div class="subtitle">
+          Ph.D. candidate in robotics manupulation and tactile perception
+        </div>
+
+        <!-- <div class="research-title">
+          Perception and Control for Cross-Domain Robotic Dexterous Manipulation
+          across Land and Water
+        </div> -->
+
+        <!-- <div class="hero-description">
+          I am a Ph.D. candidate working on cross-medium robotic manipulator, tactile sensing,
+          and robot Learning.
+          My research focuses on enabling robots to perceive physical interactions
+          and perform robust manipulation in complex and changing environments.
+        </div> -->
+
+        <div class="buttons">
+          <!-- <a class="button" href="CV.pdf" target="_blank">CV</a> -->
+
+          <a class="button secondary"
+             href="https://scholar.google.com/"
+             target="_blank">
+             Google Scholar
+          </a>
+
+
+          <a class="button secondary"
+          href="https://github.com/weiwanguu?tab=repositories"
+          target="_blank">
+          GitHub
+          </a>
+          
+          <a class="button secondary"
+             href="https://robot.tongji.edu.cn/index.htm"
+             target="_blank">
+             同济大学智能机器人与计算感知实验室
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+
+      <h2>About Me</h2>
+
+      <div class="about-text">
+        <p>
+            I'm a PhD student in Intelligent Science and Technology at Tongji University.
+
+            My longstanding interest lies in the cross-medium robotic manipulator, tactile sensing,
+            and robot Learning. 
+            
+            
+            My research focuses on enabling robots to perceive physical interactions
+            and perform robust manipulation in complex and changing environments. I'm fortunate to be advised by Tenured Associate Professor Yanmin Zhou and Professor Bin He.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Research -->
+  <section id="research">
+    <div class="container">
+
+      <h2>Research Interests</h2>
+
+      <div class="research-grid">
+
+
+
+        <!-- <div class="research-card">
+          <h3>Dexterous Manipulation</h3>
+          <p>
+            Robotic grasping, interaction perception,
+            contact-rich manipulation, and adaptive manipulation.
+          </p>
+        </div> -->
+
+        <div class="research-card">
+          <h3>Cross-Domain Robotic Manipulator</h3>
+          <p>
+            Design, analysis, and control of cross-domain robotic manipulator.
+          </p>
+        </div>
+
+        <div class="research-card">
+          <h3>Tactile Sensing</h3>
+          <p>
+            Magnetic tactile sensors, 3D force sensing, and
+            multimodal tactile sensors.
+          </p>
+        </div>
+
+        <div class="research-card">
+          <h3>Robot Learning</h3>
+          <p>
+            Multimodal learning, visual-tactile fusion,
+            and edge intelligence.
+          </p>
+        </div>
+
+        <div class="research-card">
+            <h3>Bio-inspired Underwater Robot</h3>
+            <p>
+                Mechanism design, Multimodal motion control, Perception and interaction, Manipulation.
+            </p>
+          </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Publications -->
+  <section id="publications">
+    <div class="container">
+
+      <h2>Selected Publications</h2>
+
+
+      <!-- Publication 1 -->
+      <div class="publication">
+
+        <img src="images/tmech.png" alt="Paper">
+
+        <div>
+          <div class="publication-title">
+            A Bio-Inspired Cross-Domain Robotic Manipulator with
+            Tactile Sensing and Edge Intelligence
+            <span class="tag">T-MECH (Accepted)</span>
+          </div>
+
+          <div class="authors">
+            <strong>Wei Wang</strong>, Yijie Luo, Qianqian Chen, et al.
+          </div>
+
+          <div class="venue">
+            IEEE/ASME Transactions on Mechatronics, 2026.
+          </div>
+
+          <div class="pub-links">
+            <a href="#" target="_blank">Paper</a>
+            <a href="https://github.com/weiwanguu/C-Grares" target="_blank">Code</a>
+            <a href="#" target="_blank">Video</a>
+          </div>
+
+              <!-- 视频放在这里 -->
+          <video width="640" controls style="margin-top: 15px; max-width: 100%;">
+            <source src="video/video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+
+        </div>
+
+      </div>
+
+      <!-- Publication 3 -->
+      <div class="publication">
+
+        <img src="images/cbs.png" alt="Paper">
+
+        <div>
+          <div class="publication-title">
+            Terrestrial, Underwater and Cross-Domain Robotic Manipulators:
+            A Review
+            <span class="tag">CBS (online)</span>
+          </div>
+
+          <div class="authors">
+            <strong>Wei Wang</strong>, Juelong Xiao, Yijie Luo, et al.
+          </div>
+
+          <div class="venue">
+            Cyborg and Bionic Systems, 2026.
+          </div>
+
+          <div class="pub-links">
+            <a href="https://doi.org/10.34133/cbsystems.0573" target="_blank">Paper</a>
+          </div>
+
+        </div>
+      </div>
+            <!-- Publication 3 -->
+      <div class="publication">
+
+        <img src="images/nc.png" alt="Paper">
+
+        <div>
+          <div class="publication-title">
+            High-strength liquid metal composite–hydrogel interfaces enable robust stretchable electronics
+            <span class="tag">NC (online)</span>
+          </div>
+
+          <div class="authors">
+             Bingqian Jiao, <strong>Wei Wang</strong>, Yang Feng, et al.
+          </div>
+
+          <div class="venue">
+            Nature Communications, 2026.
+          </div>
+
+          <div class="pub-links">
+            <a href="https://doi.org/10.1038/s41467-026-71920-z?urlappend=%3Futm_source%3Dresearchgate.net%26utm_medium%3Darticle" target="_blank">Paper</a>
+            <!-- <a href="https://www.youtube.com/xxxx" target="_blank">Video</a> -->
+          </div>
+
+        </div>
+      </div>
+      
+
+
+      <!-- Publication 3 -->
+      <div class="publication">
+
+        <img src="images/ral.png" alt="Paper">
+
+        <div>
+          <div class="publication-title">
+            Design and Implementation of a MiniatureJellyfish-inspired Robot
+            <span class="tag">RAL (online)</span>
+          </div>
+
+          <div class="authors">
+            <strong>Wei Wang</strong>, Weiqiang Li, jinchang Xu, et al.
+          </div>
+
+          <div class="venue">
+            IEEE Robotics and Automation Letters, 2026.
+          </div>
+
+          <div class="pub-links">
+            <a href="https://doi.org/10.1109/LRA.2023.3265585" target="_blank">Paper</a>
+          </div>
+
+                        <!-- 视频放在这里 -->
+          <video width="640" controls style="margin-top: 15px; max-width: 100%;">
+            <source src="video/video_1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+
+        </div>
+      </div>
+
+
+      <!-- 复制 publication 块即可继续添加论文 -->
+      <!-- Publication 2 -->
+      <div class="publication">
+
+        <img src="images/icra.png" alt="Paper">
+
+        <div>
+          <div class="publication-title">
+            A Cross-Medium Multimodal Tactile Sensor with a
+            Buoyancy-Guided Temporal Fusion Network for
+            Grasp Force Prediction
+            <span class="tag">RAL (Under Review)</span>
+          </div>
+
+          <div class="authors">
+            <strong>Wei Wang</strong>, Yijie Luo, Xingyu Li, et al.
+          </div>
+
+          <div class="venue">
+            IEEE Robotics and Automation Letters / Under Review.
+          </div>
+
+          <div class="pub-links">
+            <a href="" target="_blank">Paper</a>
+            <a href="https://www.youtube.com/xxxx" target="_blank">Video</a>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- Publication 3 -->
+      <div class="publication">
+
+        <img src="images/ijrr.png" alt="Paper">
+
+        <div>
+          <div class="publication-title">
+            Bionic jellyfish robot achieving enhanced steering maneuverability through asymmetric tentacles
+            <span class="tag">IJRR (online), M.Sc. thesis work</span>
+          </div>
+
+          <div class="authors">
+            Tao Zhang, Xiongqian Wu, <strong>Wei Wang</strong>, et al.
+          </div>
+
+          <div class="venue">
+            
+            The International Journal of Robotics Research, 2026.
+          </div>
+
+          <div class="pub-links">
+            <a href="https://doi.org/10.1177/02783649251377101" target="_blank">Paper</a>
+          </div>
+<!-- 
+                        视频放在这里
+          <video width="640" controls style="margin-top: 15px; max-width: 100%;">
+            <source src="video/video_1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video> -->
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="container">
+
+      <h2>Research Projects</h2>
+
+      <div class="project-grid">
+
+
+        <!-- Project 1 -->
+        <div class="project-card">
+
+          <!-- <img src="images/project1.jpg" alt="Project"> -->
+
+          <div class="project-content">
+
+            <h3>Bio-inspired Visual-Tactile Perception and Active Control for Water-Land Cross-Domain Dexterous Manipulation</h3>
+
+            <p>
+                <strong>Co-PI</strong> | June 2025 - June 2026. Shanghai Intelligent Science and Technology Category IV Peak Discipline, Interdisciplinary Innovation Education-Research Integration Project for Ph.D. students. 
+            </p>
+
+          </div>
+        </div>
+
+
+        <!-- Project 2 -->
+        <div class="project-card">
+
+          <!-- <img src="images/project2.jpg" alt="Project"> -->
+
+          <div class="project-content">
+
+            <h3> Innovative Mechanism Design and Control Methods for Miniature Bio-inspired Jellyfish Robots</h3>
+
+            <p>
+                <strong>Core member; primary proposal writer; </strong>M.Sc. project | Apr 2024 - Mar 2026. Guangzhou Basic and Applied Basic Research Program.
+            </p>
+
+          </div>
+        </div>
+
+
+        <!-- Project 3 -->
+        <div class="project-card">
+
+          <!-- <img src="images/project3.jpg" alt="Project"> -->
+
+          <div class="project-content">
+
+            <h3>Key Technologies for Deformable Underwater Dexterous Operation Robots</h3>
+
+            <p>
+                <strong>Participant.</strong> National Key R&D Program of China, Intelligent Robotics subproject.
+            </p>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Awards -->
+  <section id="awards">
+    <div class="container">
+
+      <h2>Awards & Honors</h2>
+
+      <div class="timeline-item">
+        <span class="timeline-year">2025</span>
+        International Humanoid Robot Skills Competition, Humanoid Robot Core Component Technology Innovation Track, Emerging Talent Award
+      </div>
+
+      <div class="timeline-item">
+        <span class="timeline-year">2022</span>
+        “GigaDevice Cup” 17th China Graduate Electronics Design Contest, National Second Prize
+      </div>
+
+      <div class="timeline-item">
+        <span class="timeline-year">2019</span>
+        Siemens Cup China Intelligent Manufacturing Challenge, Central China Regional First Prize
+      </div>
+
+
+      
+
+      <div class="timeline-item">
+        <span class="timeline-year">2024</span>
+        Outstanding Graduate, Guangdong University of Technology
+      </div>
+
+      <div class="timeline-item">
+        <span class="timeline-year">2024</span>
+        Academic Scholarship, Tongji University
+      </div>
+
+      <div class="timeline-item">
+        <span class="timeline-year">2024</span>
+        Outstanding Application-Oriented Talent Development Program, Guangdong University of Technology
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Education -->
+  <section id="education">
+    <div class="container">
+
+      <h2>Education</h2>
+
+      <div class="timeline-item">
+        <span class="timeline-year">2024–</span>
+
+        <strong>Ph.D. in Intelligent Science and Technology</strong><br>
+
+        Tongji University, Shanghai, China
+      </div>
+
+
+    </div>
+  </section>
+
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+
+      <h2>Contact</h2>
+
+      <div class="contact-box">
+
+        <p>
+          <strong>Email:</strong>
+          weiwang98@tongji.edu.cn
+        </p>
+
+        <p>
+          <strong>Affiliation:</strong><br>
+          Tongji University<br>
+          Shanghai, China
+        </p>
+
+        <p>
+          <strong>Google Scholar:</strong>
+          <a href="https://scholar.google.com/citations?user=-c_CP6EAAAAJ&hl=zh-CN" target="_blank">
+            Google Scholar Profile
+          </a>
+        </p>
+
+        <p>
+          <strong>GitHub:</strong>
+          <a href="https://github.com/weiwanguu?tab=repositories" target="_blank">
+            GitHub Profile
+          </a>
+        </p>
+
+        <p>
+          <strong>ORCID:</strong>
+          <a href="https://orcid.org/0009-0006-1149-4191" target="_blank">
+            ORCID
+          </a>
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+    © 2026 Wei Wang · Powered by GitHub Pages
+  </footer>
+
+</body>
+</html>
