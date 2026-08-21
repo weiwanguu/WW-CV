@@ -1,0 +1,754 @@
+<!-- # Robotics Paper Project Page Template
+
+下面这份就是你可以直接放到：
+
+```text
+papers/tmech-cross-domain/index.html
+```
+
+里的完整模板。
+
+```html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    A Bio-Inspired Cross-Domain Robotic Manipulator with Tactile Sensing and Edge Intelligence
+  </title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #222;
+      background: #ffffff;
+      line-height: 1.7;
+    }
+
+    a {
+      color: #2563a6;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(1000px, 92%);
+      margin: 0 auto;
+    }
+
+    /* =========================
+       Header
+       ========================= */
+
+    .hero {
+      padding: 70px 0 45px;
+      text-align: center;
+      background: #fafbfc;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .paper-title {
+      max-width: 1050px;
+      margin: 0 auto;
+      font-size: 2.5rem;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    .authors {
+      margin-top: 25px;
+      font-size: 1.08rem;
+      line-height: 1.8;
+    }
+
+    .authors a {
+      margin: 0 6px;
+    }
+
+    .equal {
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    .affiliations {
+      margin-top: 10px;
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    .venue {
+      margin-top: 18px;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #444;
+    }
+
+    /* =========================
+       Buttons
+       ========================= */
+
+    .buttons {
+      margin-top: 28px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 7px;
+      background: #222;
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      text-decoration: none;
+      transform: translateY(-1px);
+      opacity: 0.88;
+    }
+
+    /* =========================
+       General sections
+       ========================= */
+
+    section {
+      padding: 55px 0;
+    }
+
+    section.gray {
+      background: #f8f9fa;
+    }
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 25px;
+      font-size: 1.9rem;
+      text-align: center;
+    }
+
+    .section-text {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: justify;
+      font-size: 1.02rem;
+    }
+
+    /* =========================
+       Teaser
+       ========================= */
+
+    .teaser {
+      padding: 45px 0 20px;
+      text-align: center;
+    }
+
+    .teaser img {
+      width: 100%;
+      max-width: 950px;
+      border-radius: 6px;
+    }
+
+    .caption {
+      max-width: 900px;
+      margin: 12px auto 0;
+      color: #666;
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    /* =========================
+       Video
+       ========================= */
+
+    .video-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 8px;
+      background: #000;
+    }
+
+    /* =========================
+       Figures
+       ========================= */
+
+    .figure {
+      margin: 35px auto;
+      max-width: 920px;
+      text-align: center;
+    }
+
+    .figure img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    /* =========================
+       Contributions
+       ========================= */
+
+    .contributions {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .contributions li {
+      margin-bottom: 14px;
+    }
+
+    /* =========================
+       Results grid
+       ========================= */
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      max-width: 950px;
+      margin: 0 auto;
+    }
+
+    .result-card {
+      border: 1px solid #e5e5e5;
+      border-radius: 8px;
+      padding: 12px;
+      background: white;
+    }
+
+    .result-card img {
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    .result-card p {
+      margin: 9px 4px 3px;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    /* =========================
+       BibTeX
+       ========================= */
+
+    pre {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 22px;
+      overflow-x: auto;
+      background: #f2f4f6;
+      border-radius: 8px;
+      font-family: Consolas, Monaco, monospace;
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    /* =========================
+       Footer
+       ========================= */
+
+    footer {
+      padding: 35px 15px;
+      text-align: center;
+      color: #777;
+      border-top: 1px solid #eeeeee;
+      font-size: 0.88rem;
+    }
+
+    /* =========================
+       Responsive
+       ========================= */
+
+    @media (max-width: 720px) {
+      .paper-title {
+        font-size: 1.8rem;
+      }
+
+      .results-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 45px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <!-- ==================================================
+       HEADER
+       ================================================== -->
+
+  <header class="hero">
+
+    <div class="container">
+
+      <h1 class="paper-title">
+        A Bio-Inspired Cross-Domain Robotic Manipulator with
+        Tactile Sensing and Edge Intelligence
+      </h1>
+
+
+      <div class="authors">
+
+        <!-- 把作者名字和链接换成真实信息 -->
+
+        <a href="../../index.html" target="_blank">
+          <strong>Wei Wang</strong><sup>1</sup><sup>2</sup><sup>3</sup>
+        </a>
+
+        <a href="#" target="_blank">
+          Yijie Luo<sup>1</sup><sup>2</sup><sup>3</sup>
+        </a>
+
+        <a href="#" target="_blank">
+          Qianqian Chen<sup>5</sup>
+        </a>
+
+        <a href="#" target="_blank">
+          Juelong Xiao<sup>6</sup>
+        </a>
+
+        <a href="#" target="_blank">
+            Yanmin Zhou* <sup>2</sup><sup>3</sup><sup>4</sup>
+          </a>
+
+          
+        <a href="#" target="_blank">
+            Bin He* <sup>2</sup><sup>3</sup><sup>4</sup>
+          </a>
+
+      </div>
+
+
+      <div class="affiliations">
+        <sup>1</sup> Shanghai Research Institute for Intelligent Autonomous Systems,
+        Tongji University, Shanghai, China<br>
+      
+        <sup>2</sup> The State Key Laboratory of Autonomous Intelligent Unmanned Systems,
+        Shanghai, China<br>
+
+        <sup>3</sup>  The Frontiers Science Center for Intelligent
+Autonomous Systems, Shanghai, China<br>
+      
+        <sup>4</sup> The College of Electronics and Information Engineering,
+        Tongji University, Shanghai, China<br>
+      
+        <sup>5</sup> School of Electromechanical Engineering,
+        Guangdong University of Technology, Guangzhou, China<br>
+      
+        <sup>6</sup> Department of Computer Science,
+        City University of Hong Kong, Dongguan, China
+      </div>
+
+
+      <div class="venue">
+        IEEE/ASME Transactions on Mechatronics, 2026
+      </div>
+
+
+      <div class="buttons">
+
+        <!-- 论文正式链接 -->
+        <!-- <a class="button"
+           href="https://doi.org/你的DOI"
+           target="_blank">
+          Paper
+        </a> -->
+
+        <!-- 视频 -->
+        <a class="button"
+           href="video/video.mp4"
+           target="_blank">
+          Video
+        </a>
+
+        <!-- 代码，如果没有就删掉 -->
+        <a class="button"
+           href="https://github.com/weiwanguu/C-GraRes"
+           target="_blank">
+          Code
+        </a>
+
+        <!-- 返回个人主页 -->
+        <a class="button"
+           href="../../index.html">
+          Homepage
+        </a>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- ==================================================
+       TEASER
+       ================================================== -->
+
+
+
+
+  <!-- ==================================================
+       ABSTRACT
+       ================================================== -->
+
+  <section>
+
+    <div class="container">
+
+      <h2>Abstract</h2>
+
+      <div class="section-text">
+
+        <p>
+            Water-land cross-domain manipulation has recently
+            emerged as a research focus in robotics. However, existing
+            manipulators often struggle to adapt to diverse environments
+            due to medium variations. To address this issue, this paper
+            proposes an intelligent manipulator for water-land cross-domain
+            manipulation. The manipulator consists of three multi-link fingers,
+            high-performance 3D tactile sensors, and a force-controlled
+            grasping strategy driven by edge recognition. First, comparative
+            experiments with and without force control were conducted.
+            The results showed that the average grasping success rate
+            increased significantly from 19.4% ± 4.9% without force control
+            to 92.5% ± 4.1% with force control. Furthermore, a crossdomain
+            grasping dataset containing 25 objects was constructed.
+            The proposed model achieved an offline recognition accuracy
+            of 94.2%, representing an improvement of up to 9% over the
+            baseline models. Extensive experiments and statistical analyses
+            showed that the manipulator achieved an average real-time
+            recognition accuracy of 92.8% at an inference speed of 33 Hz
+            on the edge device, while also attaining an average grasping
+            success rate of 90.4%. Additionally, the system demonstrated
+            good generalization to unseen objects and conditions. Overall,
+            the intelligent manipulator enables stable cross-domain grasping,
+            showing promising potential for such applications.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+
+
+  <!-- ==================================================
+       CONTRIBUTIONS
+       ================================================== -->
+
+  <section>
+
+    <div class="container">
+
+      <h2>Key Contributions</h2>
+
+      <ul class="contributions">
+
+        <li>
+            An intelligent manipulator system for bidirectional crossdomain
+            operation across land and water is proposed to
+            address the challenges of stable grasping under varying
+            media and contact conditions. The underactuated multilink
+            mechanism, 3D tactile sensing, edge intelligence, and
+            force-control strategy are jointly designed and optimized
+            to enable stable bidirectional cross-domain manipulation.
+        </li>
+
+        <li>
+            A high-performance 3D magnetic tactile sensor for crossdomain
+            environments is developed. By employing a hierarchically
+            independent waterproof packaging structure, the
+            sensor achieves high resolution, high linearity, and strong
+            underwater durability, thereby enabling precise contact
+            perception and reliable closed-loop control during crossdomain
+            grasping.
+        </li>
+
+        <li>
+            A force-controlled grasping strategy driven by edge recognition
+            and implemented via cascaded PD control is proposed.
+            By deploying the proposed lightweight network on
+            a resource-constrained edge platform, the system enables
+            real-time recognition, grasping decision-making, and stable
+            force-controlled grasping, while demonstrating good generalization
+            to unseen objects and cross-domain conditions.
+        </li>
+
+      </ul>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================================
+       METHOD
+       ================================================== -->
+
+  <section class="gray">
+
+    <div class="container">
+
+      <h2>Mechanism Design and Analysis</h2>
+
+      <div class="figure">
+
+        <!-- 换成你的系统图 -->
+        <img
+          src="images/1.png"
+          alt="System Overview">
+
+        <div class="caption">
+          Fig. 1. Bionic mapping from the human hand to the robotic system and motion analysis. (a) Human hand structure. (b) Structure of a single robotic finger.
+          (c) Structure of the robotic manipulator. (d) Schematic of grasping and releasing. (e) Single-finger mechanism diagram. (f) Motion parameter analysis.
+        </div>
+
+
+    </div>
+
+    <section class="gray">
+
+  <section 
+    <div class="container">
+
+      <h2>Tactile Sensor Design and Calibration</h2>
+
+      <div class="figure">
+
+        <!-- 换成你的系统图 -->
+        <img
+          src="images/2.png"
+          alt="Tactile Sensor Design and Calibration">
+
+        <div class="caption">
+            Fig. 2. Design and testing of the 3D magnetic tactile sensor. (a) Fingertip 3D
+            models. (b) Physical drawings. (c) Sensor underwater calibration platform. (d)
+            Analysis of 3-axis magnetic flux and force (R2-Coefficient of determination,
+            S-Sensitivity, Havg-Average hysteresis, Hmax-Maximum hysteresis, P0-
+            press point 0) . (e) Underwater repeated pressing data (20,000 cycles).
+        </div>
+
+
+    </div>
+
+  </section >
+
+  <section 
+  <div class="container">
+
+    <h2>Force Control Algorithm</h2>
+
+    <div class="figure">
+
+      <!-- 换成你的系统图 -->
+      <img
+        src="images/8.png"
+        alt="Tactile Sensor Design and Calibration">
+
+      <!-- <div class="caption">
+          Fig. 2. Design and testing of the 3D magnetic tactile sensor. (a) Fingertip 3D
+          models. (b) Physical drawings. (c) Sensor underwater calibration platform. (d)
+          Analysis of 3-axis magnetic flux and force (R2-Coefficient of determination,
+          S-Sensitivity, Havg-Average hysteresis, Hmax-Maximum hysteresis, P0-
+          press point 0) . (e) Underwater repeated pressing data (20,000 cycles).
+      </div> -->
+
+
+  </div>
+
+</section >
+
+  <section class="gray">
+  <div class="container">
+
+    <h2>Edge-oriented Neural Network Design</h2>
+
+    <div class="figure">
+
+      <!-- 换成你的系统图 -->
+      <img
+        src="images/3.png"
+        alt="Tactile Sensor Design and Calibration">
+
+      <div class="caption">
+        Fig. 3. A overview of the proposed enhanced lightweight network CGraRes,
+        consisting of raw tactile input, multi-scale temporal encoder, shallow
+        residual backbone, SE-enhanced residual block, global average pooling, fully
+        connected layer, and object classification output. (Note: Tensor shape: Batch
+        × Channel × Length)
+      </div>
+
+
+  </div>
+
+</section>
+
+<section class="gray">
+    <div class="container">
+  
+      <h2>Experimental verification and analysis</h2>
+  
+      <div class="figure">
+  
+        <!-- 换成你的系统图 -->
+        <img
+          src="images/4.png"
+          alt="Tactile Sensor Design and Calibration">
+  
+        <div class="caption">
+            Fig. 5. Snapshots of grasping experiments, tactile data, and statistical analysis. (a) Grasping without force control. (b) Grasping with force control. (c1-c2)
+            Data of stable grasping and post-slip recovery under force control. (d1-d4) Force-controlled grasping experiments under four scenarios (general placement
+            (GP), inverted placement (IP), fast water exit (FWE) and dynamic water flow (DWF)). (e) Statistical analysis of grasp success count with and without force
+            control. (f) Comparative analysis of grasping success rates with and without force control (FC and NFC) under four scenarios (GP, IP, FWE, DWF).
+        </div>
+
+        <div class="figure">
+  
+            <!-- 换成你的系统图 -->
+            <img
+              src="images/5.png"
+              alt="Tactile Sensor Design and Calibration">
+<!--       
+            <div class="caption">
+              Fig. 3. A overview of the proposed enhanced lightweight network CGraRes,
+              consisting of raw tactile input, multi-scale temporal encoder, shallow
+              residual backbone, SE-enhanced residual block, global average pooling, fully
+              connected layer, and object classification output. (Note: Tensor shape: Batch
+              × Channel × Length)
+            </div> -->
+            <div class="figure">
+  
+                <!-- 换成你的系统图 -->
+                <img
+                  src="images/6.png"
+                  alt="Tactile Sensor Design and Calibration">
+          
+                <div class="caption">
+                    Fig. 6. Force-controlled grasping experiments driven by edge recognition, with statistical analysis. (a) Cross-domain grasping-transfer-releasing full-process
+with recognition-driven force control. (b-c) Edge inference combined with force-controlled grasping data analysis. (d) Statistical analysis of inference success
+and grasp success counts for all objects.
+                </div>
+
+                <div class="figure">
+  
+                    <!-- 换成你的系统图 -->
+                    <img
+                      src="images/7.png"
+                      alt="Tactile Sensor Design and Calibration">
+              
+                    <div class="caption">
+                        Fig. 7. Reverse cross-domain grasping experiments and bidirectional grasping
+comparative analysis. (a) Snapshots of reverse grasping. (b) Radar chart of
+inference success and grasp success counts for bidirectional grasping.
+                    </div>
+  
+    </div>
+  
+  </section>
+
+    <!-- ==================================================
+       VIDEO
+       ================================================== -->
+
+       <section class="gray">
+
+        <div class="container">
+    
+          <h2>Video</h2>
+    
+          <div class="video-wrapper">
+    
+            <video controls preload="metadata">
+              <source src="video/video.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+    
+          </div>
+    
+        </div>
+    
+      </section>
+
+
+
+
+
+  <!-- ==================================================
+       BIBTEX
+       ================================================== -->
+
+  <section class="gray">
+
+    <div class="container">
+
+      <h2>BibTeX</h2>
+
+      <pre>
+@article{wang2026crossdomain,
+  title   = {A Bio-Inspired Cross-Domain Robotic Manipulator
+             with Tactile Sensing and Edge Intelligence},
+  author  = {Wang, Wei and Yiji Luo},
+  journal = {IEEE/ASME Transactions on Mechatronics},
+  year    = {2026}
+}
+      </pre>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================================
+       FOOTER
+       ================================================== -->
+
+  <footer>
+
+    © 2026 Wei Wang · Project Page
+
+    <br>
+
+    <a href="../../index.html">
+      Back to Homepage
+    </a>
+
+  </footer>
+
+
+</body>
+
+</html>
+
