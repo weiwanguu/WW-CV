@@ -1,0 +1,1980 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Bionic Jellyfish Robot Achieving Enhanced Steering Maneuverability through Asymmetric Tentacles">
+
+  <meta
+    name="keywords"
+    content="Bionic Jellyfish Robot, Steering Maneuverability, Asymmetric Tentacles, Underwater Robot, Hydrodynamics">
+
+
+  <title>
+    Bionic Jellyfish Robot Achieving Enhanced Steering Maneuverability through Asymmetric Tentacles
+  </title>
+
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #222;
+      background: #ffffff;
+      line-height: 1.7;
+    }
+
+
+    a {
+      color: #2563a6;
+      text-decoration: none;
+    }
+
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+
+    .container {
+      width: min(1000px, 92%);
+      margin: 0 auto;
+    }
+
+
+    /* ==================================================
+       HEADER
+       ================================================== */
+
+    .hero {
+      padding: 70px 0 45px;
+      text-align: center;
+      background: #fafbfc;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+
+    .paper-title {
+      max-width: 1050px;
+      margin: 0 auto;
+      font-size: 2.5rem;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+
+    .authors {
+      margin-top: 25px;
+      font-size: 1.08rem;
+      line-height: 1.9;
+    }
+
+
+    .authors a {
+      margin: 0 5px;
+      white-space: nowrap;
+    }
+
+
+    .affiliations {
+      margin-top: 12px;
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+
+    .correspondence {
+      margin-top: 9px;
+      color: #666;
+      font-size: 0.92rem;
+    }
+
+
+    .venue {
+      margin-top: 18px;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #444;
+    }
+
+
+    .paper-meta {
+      margin-top: 5px;
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+
+    /* ==================================================
+       BUTTONS
+       ================================================== */
+
+    .buttons {
+      margin-top: 28px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 7px;
+      background: #222;
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+
+    .button:hover {
+      text-decoration: none;
+      transform: translateY(-1px);
+      opacity: 0.88;
+    }
+
+
+    /* ==================================================
+       GENERAL SECTIONS
+       ================================================== */
+
+    section {
+      padding: 55px 0;
+    }
+
+
+    section.gray {
+      background: #f8f9fa;
+    }
+
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 25px;
+      font-size: 1.9rem;
+      text-align: center;
+    }
+
+
+    .section-text {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: justify;
+      font-size: 1.02rem;
+    }
+
+
+    /* ==================================================
+       FIGURES
+       ================================================== */
+
+    .figure {
+      margin: 35px auto;
+      max-width: 920px;
+      text-align: center;
+    }
+
+
+    .figure img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+
+    .image-placeholder {
+      width: 100%;
+      min-height: 250px;
+
+      border: 2px dashed #d0d0d0;
+      border-radius: 8px;
+
+      background: #fcfcfc;
+      color: #999;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 30px;
+
+      font-size: 0.95rem;
+    }
+
+
+    .caption {
+      max-width: 900px;
+      margin: 14px auto 0;
+
+      color: #666;
+
+      font-size: 0.92rem;
+      line-height: 1.55;
+
+      text-align: justify;
+    }
+
+
+    /* ==================================================
+       KEY HIGHLIGHTS
+       ================================================== */
+
+    .contributions {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+
+    .contributions li {
+      margin-bottom: 14px;
+    }
+
+
+    /* ==================================================
+       TABLE
+       ================================================== */
+
+    .spec-table {
+      width: 100%;
+      max-width: 850px;
+
+      margin: 25px auto;
+
+      border-collapse: collapse;
+
+      font-size: 0.95rem;
+    }
+
+
+    .spec-table th,
+    .spec-table td {
+      border: 1px solid #dddddd;
+      padding: 10px 14px;
+      text-align: center;
+    }
+
+
+    .spec-table th {
+      background: #f2f4f6;
+      font-weight: 600;
+    }
+
+
+    /* ==================================================
+       PUBLICATION DETAILS
+       ================================================== */
+
+    .detail-block {
+      max-width: 900px;
+      margin: 0 auto 28px;
+    }
+
+
+    .detail-block h3 {
+      margin: 0 0 8px;
+      font-size: 1.12rem;
+    }
+
+
+    .detail-block p {
+      margin: 0;
+      text-align: justify;
+    }
+
+
+    /* ==================================================
+       BIBTEX
+       ================================================== */
+
+    pre {
+      max-width: 900px;
+      margin: 0 auto;
+
+      padding: 22px;
+
+      overflow-x: auto;
+
+      background: #f2f4f6;
+
+      border-radius: 8px;
+
+      font-family: Consolas, Monaco, monospace;
+      font-size: 0.9rem;
+
+      line-height: 1.55;
+    }
+
+
+    /* ==================================================
+       FOOTER
+       ================================================== */
+
+    footer {
+      padding: 35px 15px;
+
+      text-align: center;
+
+      color: #777;
+
+      border-top: 1px solid #eeeeee;
+
+      font-size: 0.88rem;
+    }
+
+
+    /* ==================================================
+       RESPONSIVE
+       ================================================== */
+
+    @media (max-width: 720px) {
+
+      .paper-title {
+        font-size: 1.8rem;
+      }
+
+
+      .hero {
+        padding-top: 45px;
+      }
+
+
+      .image-placeholder {
+        min-height: 180px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+
+<body>
+
+
+  <!-- ==================================================
+       HEADER
+       ================================================== -->
+
+  <header class="hero">
+
+    <div class="container">
+
+
+      <h1 class="paper-title">
+
+        Bionic Jellyfish Robot Achieving Enhanced Steering
+        Maneuverability through Asymmetric Tentacles
+
+      </h1>
+
+
+
+      <div class="authors">
+
+
+        <a href="#" target="_blank">
+          Tao Zhang<sup>1,2</sup>
+        </a>
+
+
+        <a href="#" target="_blank">
+          Xiongqian Wu<sup>2</sup>
+        </a>
+
+
+        <a href="../../index.html" target="_blank">
+          <strong>Wei Wang</strong><sup>2</sup>
+        </a>
+
+
+        <a href="#" target="_blank">
+          Xueqin Zheng<sup>2</sup>
+        </a>
+
+
+        <a href="#" target="_blank">
+          Qianqian Chen<sup>2</sup>
+        </a>
+
+
+        <a href="#" target="_blank">
+          Haifei Zhu<sup>2</sup>
+        </a>
+
+
+        <a href="#" target="_blank">
+          Yisheng Guan<sup>2</sup>
+        </a>
+
+
+        <a href="#" target="_blank">
+          Kun Xu<sup>1</sup>*
+        </a>
+
+
+        <a href="#" target="_blank">
+          Xilun Ding<sup>1</sup>
+        </a>
+
+
+      </div>
+
+
+
+      <!-- ==================================================
+           AFFILIATIONS
+           ================================================== -->
+
+      <div class="affiliations">
+
+
+        <sup>1</sup>
+        School of Mechanical Engineering and Automation,
+        Beihang University,
+        Beijing, China
+
+        <br>
+
+
+        <sup>2</sup>
+        School of Electromechanical Engineering,
+        Guangdong University of Technology,
+        Guangzhou, China
+
+
+      </div>
+
+
+
+      <!-- Corresponding author -->
+
+      <div class="correspondence">
+
+        * Corresponding author:
+        Kun Xu,
+        Robotics Institute,
+        School of Mechanical Engineering and Automation,
+        Beihang University,
+        Beijing 100191, China
+
+        <br>
+
+        Email:
+        xk007@buaa.edu.cn
+
+      </div>
+
+
+
+      <!-- Journal -->
+
+      <div class="venue">
+
+        The International Journal of Robotics Research
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+      <!-- ==================================================
+           BUTTONS
+           ================================================== -->
+
+      <div class="buttons">
+
+
+        <!--
+        正式发表后，把 paper.pdf 替换成 DOI 或正式论文链接
+        -->
+
+        <a
+          class="button"
+          href="paper.pdf"
+          target="_blank">
+
+          Paper
+
+        </a>
+
+
+        <!--
+        Supplemental Video 1
+        如果已经把视频放进文件夹，可以修改路径，例如：
+
+        href="video/1.mp4"
+        -->
+
+        <a
+          class="button"
+          href="#video">
+
+          Video
+
+        </a>
+
+
+        <a
+          class="button"
+          href="../../index.html">
+
+          Homepage
+
+        </a>
+
+
+      </div>
+
+
+    </div>
+
+  </header>
+
+
+
+  <!-- ==================================================
+       ABSTRACT
+       ================================================== -->
+
+  <section>
+
+    <div class="container">
+
+
+      <h2>Abstract</h2>
+
+
+      <div class="section-text">
+
+
+        <p>
+
+          With the rapid advancement of the marine industry,
+          bionic robots have become increasingly important to
+          underwater scientific research and engineering applications.
+
+          As representative invertebrate zooplankton,
+          jellyfish exhibit an efficient jet propulsion swimming mode
+          that enables them to adapt to complex and ever-changing
+          marine environments.
+
+          This paper proposes a lightweight and energy-efficient
+          bionic jellyfish robot capable of achieving high-efficiency
+          spatial swimming and steering via asymmetric tentacles.
+
+          Forward propulsion is achieved through a reciprocating
+          cylindrical cam that swings six tentacles coated with
+          a thick silicone membrane.
+
+          Spatial steering is realized through an eccentric disc cam,
+          which adjusts the circumferential asymmetry
+          of the six tentacles.
+
+          A compact controller based on STM32F4 is designed
+          to receive commands wirelessly and generate
+          the required control signals to drive three motors.
+
+          Fluid simulation,
+          integrated with a theoretical model,
+          was performed to analyze the jet propulsion force
+          of the jellyfish robot.
+
+          The 287-g robot prototype measures 110 mm in diameter
+          and 159 mm in height in its contraction state.
+
+          It was tested under various swimming modes
+          to verify its steering capability in three-dimensional space.
+
+          Experimental results demonstrate that the bionic jellyfish robot
+          achieves a maximum average swimming speed of 7.5 cm/s,
+          corresponding to 0.47 body lengths per second (BL/s),
+          placing its swimming efficiency among the best
+          of existing bionic jellyfish robots.
+
+          Furthermore,
+          it exhibits remarkable maneuverability,
+          with a maximum steering angle of 200°
+          and a maximum steering velocity of 22.7 °/s.
+
+          The proposed robot holds significant potential
+          for applications in underwater signal relays,
+          environmental monitoring,
+          and geological investigations.
+
+        </p>
+
+
+
+        <p>
+
+          <strong>Keywords:</strong>
+
+          Bionic jellyfish robot,
+          Steering maneuverability,
+          Enhanced efficiency,
+          Kinematic and hydrodynamic analyses,
+          Swimming tests.
+
+        </p>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       KEY HIGHLIGHTS
+       ================================================== -->
+
+  <section class="gray">
+
+    <div class="container">
+
+
+      <h2>Key Highlights</h2>
+
+
+      <ul class="contributions">
+
+
+        <li>
+
+          A novel steering method based on asymmetric tentacle
+          motion is proposed.
+          An eccentric disc cam regulates the eccentricity
+          and circumferential direction of the six tentacles,
+          enabling flexible spatial steering without relying
+          on conventional center-of-gravity adjustment
+          or rudder mechanisms.
+
+        </li>
+
+
+        <li>
+
+          A kinematic and propulsion-force model is established
+          for straight-line swimming.
+          Theoretical calculation and experimental force measurements
+          achieve approximately 96% agreement,
+          providing quantitative support for propulsion-performance
+          analysis and optimization.
+
+        </li>
+
+
+        <li>
+
+          Kinematic analysis and computational fluid dynamics
+          are combined to investigate the hydrodynamic characteristics
+          of asymmetric steering,
+          revealing how tentacle eccentricity affects vortex structures,
+          steering torque,
+          angular velocity,
+          and turning performance.
+
+        </li>
+
+
+        <li>
+
+          The 287-g prototype measures 110 mm in diameter
+          and 159 mm in height in the contracted state,
+          achieving a maximum average swimming speed of 7.5 cm/s,
+          a maximum steering angle of 200°,
+          and a maximum steering velocity of 22.7 °/s.
+
+        </li>
+
+
+      </ul>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 1
+       ================================================== -->
+
+  <section>
+
+    <div class="container">
+
+
+      <h2>Bionic Mapping and Robotic System</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/1.png"
+          alt="Bionic Mapping from Jellyfish to Robotic System">
+        -->
+
+
+        <img
+        src="images/1.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Figure 1.
+          </strong>
+
+          Bionic mapping from jellyfish to the robotic system.
+
+          <strong>(a)</strong>
+          Anatomical structure of <i>Aurelia aurita</i>.
+
+          <strong>(b)</strong>
+          Swimming modes of jellyfish.
+
+          <strong>(c)</strong>
+          Mechatronic system of the bionic jellyfish robot:
+          front view illustrating the mechanical component layout
+          (left),
+          top view showing the electronic unit configuration
+          (middle),
+          and sectional view highlighting internal components
+          (right).
+
+          <strong>(d)</strong>
+          Schematic diagram of the multi-link tentacle
+          with eccentricity.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 2
+       ================================================== -->
+
+  <section class="gray">
+
+    <div class="container">
+
+
+      <h2>Steering Mechanism</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/2.png"
+          alt="Steering Mechanism and Operating Principle">
+        -->
+
+
+        <img
+        src="images/2.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Figure 2.
+          </strong>
+
+          Steering mechanism and operating principle.
+
+          <strong>(a–b)</strong>
+          Front and exploded views of the mechanism components.
+
+          <strong>(c)</strong>
+          Steering principle:
+          1—Initial state without eccentricity;
+          2—Eccentricity generation by rotating the decentration motor;
+          3—Coordination between the decentration and deflection motors
+          to alter the eccentric direction;
+          4—Maximum eccentricity achieved at T3
+          through a 180° deflection.
+
+          <strong>(d)</strong>
+          Crank-slider mechanism to realize eccentricity
+          via the disc cam.
+
+          <strong>(e)</strong>
+          Schematic diagram of the coordination
+          between the decentration and deflection motors.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 3
+       ================================================== -->
+
+  <section>
+
+    <div class="container">
+
+
+      <h2>Swing Mechanism Design and Analysis</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/3.png"
+          alt="Swing Mechanism Design and Analysis">
+        -->
+
+
+        <img
+        src="images/3.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Figure 3.
+          </strong>
+
+          Swing mechanism design and analysis.
+
+          <strong>(a)</strong>
+          Three-dimensional model.
+
+          <strong>(b)</strong>
+          Kinematic schematic.
+
+          <strong>(c)</strong>
+          Stroke profile of the cylindrical cam.
+
+          <strong>(d)</strong>
+          Analysis of inner cavity volume.
+
+          <strong>(e)</strong>
+          Force analysis during jet propulsion.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 4
+       ================================================== -->
+
+  <section class="gray">
+
+    <div class="container">
+
+
+      <h2>Motion Analysis</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/4.png"
+          alt="Results of Motion Analysis">
+        -->
+
+
+        <img
+        src="images/4.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Figure 4.
+          </strong>
+
+          Results of motion analysis.
+
+          <strong>(a)</strong>
+          Swing angular velocity
+          ω<sub>s</sub> during T<sub>0</sub>
+          for different eccentricities e.
+          The direction in which the swing angle increases
+          is defined as the positive direction of ω<sub>s</sub>.
+
+          <strong>(b)</strong>
+          Swing angle θ<sub>s</sub> during T<sub>0</sub>
+          for different eccentricities e.
+
+          <strong>(c)</strong>
+          Maximum swing angle θ<sub>s,max</sub>
+          for different eccentricities e.
+
+          <strong>(d)</strong>
+          Tentacle configuration variation
+          when the eccentricity
+          e = 2.5 mm and 5 mm
+          toward Tentacle 6.
+
+          <strong>(e)</strong>
+          Swing angle θ<sub>s</sub>
+          and tentacle angle θ<sub>t</sub>
+          variations during a swing period T<sub>0</sub>
+          when the eccentricity
+          e = 2.5 mm and 5 mm
+          toward Tentacle 6.
+
+          <strong>(f)</strong>
+          Maximum swing angle θ<sub>s,max</sub>
+          versus deflection angle when the eccentricities
+          e = −5, −2.5, 0, 2.5, and 5 mm
+          are applied toward Tentacle 6 (top),
+          and maximum swing angle θ<sub>s,max</sub>
+          of the six tentacles when
+          e = 5 mm toward Tentacle 6.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 5
+       ================================================== -->
+
+  <section>
+
+    <div class="container">
+
+
+      <h2>CFD Analysis</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/5.png"
+          alt="Results of CFD Analysis">
+        -->
+
+
+        <img
+        src="images/5.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Figure 5.
+          </strong>
+
+          Results of CFD analysis.
+
+          <strong>(a)</strong>
+          Flow field nephogram during CFD simulation.
+
+          <strong>(b)</strong>
+          Simulation setup.
+
+          <strong>(c)</strong>
+          Speed variation over a full cycle
+          for T<sub>0</sub> = 1.5 s.
+
+          <strong>(d)</strong>
+          Fitted swimming speed curves within a propulsion cycle
+          for T<sub>0</sub> = 1.2 and 1.5 s.
+
+          <strong>(e)</strong>
+          Inner cavity size variation during T.
+
+          <strong>(f)</strong>
+          Inner cavity volume change during T.
+
+          <strong>(g)</strong>
+          Resultant force F<sub>R</sub> variation during T,
+          where the additional mass coefficient α(t)
+          is empirically set to 3.0 during calculation.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 6
+       ================================================== -->
+
+  <section class="gray">
+
+    <div class="container">
+
+
+      <h2>Design Parameter Analysis</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/6.png"
+          alt="Design Parameter Analysis">
+        -->
+
+
+        <img
+        src="images/6.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Figure 6.
+          </strong>
+
+          Design parameter analysis.
+
+          <strong>(a)</strong>
+          Primary structural parameters of the robot cavity.
+
+          <strong>(b)</strong>
+          Main structural parameters versus propulsion.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 7
+       ================================================== -->
+
+  <section>
+
+    <div class="container">
+
+
+      <h2>Steering CFD Analysis</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/7.png"
+          alt="Steering CFD Analysis">
+        -->
+
+
+        <img
+        src="images/7.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Figure 7.
+          </strong>
+
+          Steering results for different eccentricities e
+          through CFD simulation.
+
+          <strong>(a)</strong>
+          Flow field of the robot at t = 1.5 s.
+
+          <strong>(b)</strong>
+          Flow field of the robot
+          when the eccentricity e = 5 mm.
+
+          <strong>(c)</strong>
+          Motion trajectories of the robot.
+
+          <strong>(d)</strong>
+          Robot steering angular velocity.
+
+          <strong>(e)</strong>
+          Robot steering torque.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 8
+       ================================================== -->
+
+  <section class="gray">
+
+    <div class="container">
+
+
+      <h2>Control Electronics</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/8.png"
+          alt="Hardware Architecture of Control Electronics">
+        -->
+
+
+        <img
+        src="images/8.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Figure 8.
+          </strong>
+
+          Hardware architecture of control electronics.
+
+          <strong>(a)</strong>
+          Control system block diagram.
+
+          <strong>(b)</strong>
+          PCB layout and functional modules.
+
+          <strong>(c)</strong>
+          Program flowchart.
+
+          <strong>(d)</strong>
+          Swimming control sequence.
+
+          Note:
+          DecM—Decentration Motor,
+          DefM—Deflection Motor,
+          SwM—Swing Motor.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 9
+       ================================================== -->
+
+  <section>
+
+    <div class="container">
+
+
+      <h2>Prototype Development</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/9.png"
+          alt="Bionic Mapping and Robot Assembly Testing">
+        -->
+
+
+        <img
+        src="images/9.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Figure 9.
+          </strong>
+
+          Bionic mapping and robot assembly testing.
+
+          <strong>(a)</strong>
+          Prototype development of the bionic jellyfish robot.
+
+          <strong>(b)</strong>
+          Schematic of foam block installation.
+
+          <strong>(c–d)</strong>
+          Mechanism test with eccentricity:
+          top view and front view.
+
+          <strong>(e)</strong>
+          Omnidirectional eccentricity
+          (c<sub>max</sub> and c<sub>min</sub>
+          represent the distance from the tentacle slider
+          to the robot center axis, respectively).
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 10
+       ================================================== -->
+
+  <section class="gray">
+
+    <div class="container">
+
+
+      <h2>Propulsion Force Measurement</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/10.png"
+          alt="Propulsion Force Measurement Platform">
+        -->
+
+
+        <img
+        src="images/10.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Figure 10.
+          </strong>
+
+          Experimental platform for propulsion force measurement.
+
+          <strong>(a)</strong>
+          Schematic diagram.
+
+          <strong>(b)</strong>
+          Top view.
+
+          <strong>(c)</strong>
+          Side view.
+
+          <strong>(d)</strong>
+          Real-time force data collected from repeated tests
+          under the same experimental conditions.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 11
+       ================================================== -->
+
+  <section>
+
+    <div class="container">
+
+
+      <h2>Wired Swimming Experiments</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/11.png"
+          alt="Snapshots of Wired Experiments">
+        -->
+
+
+        <img
+        src="images/11.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Figure 11.
+          </strong>
+
+          Snapshots of wired experiments.
+
+          <strong>(a)</strong>
+          Vertical swimming.
+
+          <strong>(b)</strong>
+          60° left steering.
+
+          <strong>(c)</strong>
+          90° right steering.
+
+          <strong>(d)</strong>
+          180° right steering.
+
+          <strong>(e)</strong>
+          S-shaped steering.
+
+          Note:
+          Tentacle 6 is located on the left side of the robot.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 12
+       ================================================== -->
+
+  <section class="gray">
+
+    <div class="container">
+
+
+      <h2>Outdoor Swimming Experiments</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/12.png"
+          alt="Pool and Ecological Watershed Experiments">
+        -->
+
+
+        <img
+        src="images/12.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Figure 12.
+          </strong>
+
+          Snapshots of wired experiments
+          in the pool and ecological watershed.
+
+          <strong>(a–c)</strong>
+          Vertical ascent,
+          90° outward steering,
+          and 60° left steering
+          in the pool,
+          respectively.
+
+          <strong>(d–f)</strong>
+          Vertical ascent,
+          126° left steering,
+          and 180° left steering
+          in the ecological watershed,
+          respectively.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 13
+       ================================================== -->
+
+  <section>
+
+    <div class="container">
+
+
+      <h2>Wireless Swimming Experiments</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/13.png"
+          alt="Wireless Swimming Experiments">
+        -->
+
+
+        <img
+        src="images/13.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Figure 13.
+          </strong>
+
+          Snapshots of wireless experiments.
+
+          <strong>(a)</strong>
+          Vertical ascent.
+
+          <strong>(b)</strong>
+          Vertical submergence.
+
+          <strong>(c)</strong>
+          Diagonally upward swimming.
+
+          <strong>(d)</strong>
+          Diagonally downward swimming.
+
+          <strong>(e)</strong>
+          Surface swimming.
+
+          <strong>(f)</strong>
+          140° right steering.
+
+          <strong>(g)</strong>
+          200° left steering.
+
+          <strong>(h)</strong>
+          90° inward steering.
+
+          <strong>(i)</strong>
+          Left steering at e = 1 mm.
+
+          <strong>(j)</strong>
+          Left steering at e = 3 mm.
+
+          <strong>(k)</strong>
+          Left steering at e = 5 mm.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 14
+       ================================================== -->
+
+  <section class="gray">
+
+    <div class="container">
+
+
+      <h2>Steering Performance Comparison</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/14.png"
+          alt="Steering Performance Comparison">
+        -->
+
+
+        <img
+        src="images/14.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Figure 14.
+          </strong>
+
+          Steering performance and performance comparison.
+
+          <strong>(a)</strong>
+          Steering angle.
+
+          <strong>(b)</strong>
+          Average steering rate.
+
+          <strong>(c)</strong>
+          Performance comparison of bionic jellyfish robots
+          under standardized parameters.
+
+          Note:
+          B<sub>ref</sub> represents maximum swimming efficiency,
+          and S<sub>ref</sub> represents maximum steering capability.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       TECHNICAL SPECIFICATIONS
+       TABLE 2
+       ================================================== -->
+
+  <section>
+
+    <div class="container">
+
+
+      <h2>Technical Specifications</h2>
+
+
+      <table class="spec-table">
+
+
+        <thead>
+
+          <tr>
+
+            <th>Name</th>
+
+            <th>Material</th>
+
+            <th>Quantity</th>
+
+            <th>Weight (g)</th>
+
+          </tr>
+
+        </thead>
+
+
+        <tbody>
+
+
+          <tr>
+
+            <td>Tentacle</td>
+
+            <td>Carbon fiber / silicone</td>
+
+            <td>6</td>
+
+            <td>36</td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>Transmission mechanism</td>
+
+            <td>Al alloy / carbon fiber</td>
+
+            <td>1</td>
+
+            <td>21</td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>Membrane</td>
+
+            <td>0.1-mm-thick silicone</td>
+
+            <td>1</td>
+
+            <td>10</td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>Battery</td>
+
+            <td>—</td>
+
+            <td>1</td>
+
+            <td>32</td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>Control system</td>
+
+            <td>PCB</td>
+
+            <td>1</td>
+
+            <td>28</td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>Swing motor</td>
+
+            <td>—</td>
+
+            <td>1</td>
+
+            <td>9</td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>Deflection motor</td>
+
+            <td>—</td>
+
+            <td>1</td>
+
+            <td>18</td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>Decentration motor</td>
+
+            <td>—</td>
+
+            <td>1</td>
+
+            <td>18</td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>Other components</td>
+
+            <td>8200 resin</td>
+
+            <td>—</td>
+
+            <td>133</td>
+
+          </tr>
+
+
+          <tr>
+
+            <td><strong>Total weight</strong></td>
+
+            <td>—</td>
+
+            <td>—</td>
+
+            <td><strong>287</strong></td>
+
+          </tr>
+
+
+        </tbody>
+
+
+      </table>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       SUMMARY AND FUTURE WORK
+       ================================================== -->
+
+  <section class="gray">
+
+    <div class="container">
+
+
+      <h2>Summary and Future Work</h2>
+
+
+      <div class="section-text">
+
+
+        <p>
+
+          A 3-DOF bionic jellyfish robot is presented,
+          distinguished as the lightest among the rigid-body
+          jellyfish robots considered in the study.
+
+          Inspired by the motion of natural jellyfish,
+          the robot employs a bionic mechanism based on
+          eccentric swinging of asymmetric tentacles
+          to enhance steering capability and motion flexibility.
+
+          The robot achieves a maximum steering angle of 200°
+          and a maximum steering angular velocity of 22.7 °/s.
+
+        </p>
+
+
+        <p>
+
+          A new steering strategy based on eccentric adjustment
+          of the tentacles is proposed,
+          enabling direction control through asymmetric thrust distribution
+          without relying on conventional center-of-gravity adjustment
+          mechanisms or rudder structures.
+
+          A kinematic and propulsion-force analysis model
+          is established for straight-line swimming,
+          and theoretical predictions agree with experimental
+          force measurements by approximately 96%.
+
+          Furthermore,
+          the hydrodynamic characteristics during steering
+          are evaluated through kinematic analysis
+          and CFD simulation,
+          verifying the effectiveness of eccentricity regulation
+          for enhanced maneuverability.
+
+        </p>
+
+
+        <p>
+
+          Future research will focus on comprehensive
+          three-dimensional hydrodynamic analysis of steering,
+          advanced model-based control,
+          multimodal sensing for improved environmental perception
+          and autonomy,
+          and the integration of soft intelligent materials
+          and variable-stiffness mechanisms
+          for smaller,
+          smarter,
+          and more flexible bionic jellyfish robots.
+
+        </p>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  
+
+
+
+  <!-- ==================================================
+       BIBTEX
+       ================================================== -->
+
+  <section class="gray">
+
+    <div class="container">
+
+
+      <h2>BibTeX</h2>
+
+
+      <!--
+      当前 PDF 是 Peer Review Manuscript，
+      正式发表后建议把 year、volume、issue、pages 和 DOI
+      按最终版本更新。
+      -->
+
+
+      <pre>
+@article{zhang2025bionic,
+  title   = {Bionic Jellyfish Robot Achieving Enhanced Steering Maneuverability through Asymmetric Tentacles},
+  author  = {Zhang, Tao and Wu, Xiongqian and Wang, Wei and Zheng, Xueqin and Chen, Qianqian and Zhu, Haifei and Guan, Yisheng and Xu, Kun and Ding, Xilun},
+  journal = {The International Journal of Robotics Research},
+  year    = {2026},
+}
+      </pre>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FOOTER
+       ================================================== -->
+
+  <footer>
+
+
+    © 2025 · Project Page
+
+
+    <br>
+
+
+    <a href="../../index.html">
+
+      Back to Homepage
+
+    </a>
+
+
+  </footer>
+
+
+</body>
+
+</html>
