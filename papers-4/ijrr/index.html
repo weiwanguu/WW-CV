@@ -1912,7 +1912,181 @@
   </section>
 
 
+<!-- ==================================================
+     VIDEO DEMONSTRATIONS
+     ================================================== -->
 
+     <style>
+
+      .video-section {
+        padding: 45px 0 55px;
+      }
+    
+      .video-section .container {
+        width: min(1000px, 92%);
+        margin: 0 auto;
+      }
+    
+      .video-section h2 {
+        margin-top: 0;
+        margin-bottom: 28px;
+        font-size: 1.9rem;
+        text-align: center;
+      }
+    
+      .video-grid {
+        display: grid;
+    
+        /* 一行三个视频 */
+        grid-template-columns: repeat(3, 240px);
+    
+        gap: 200px;
+    
+        justify-content: center;
+        align-items: start;
+    
+        margin: 0 auto;
+      }
+    
+      .video-card {
+        width: 240px;
+      }
+    
+      .video-card video {
+        width: 420px;
+        height: auto;
+    
+        display: block;
+    
+        border-radius: 6px;
+        background: #000;
+      }
+    
+      /* 平板 */
+      @media (max-width: 820px) {
+    
+        .video-grid {
+          grid-template-columns: repeat(2, 240px);
+        }
+    
+      }
+    
+      /* 手机 */
+      @media (max-width: 540px) {
+    
+        .video-grid {
+          grid-template-columns: 240px;
+        }
+    
+      }
+    
+    </style>
+    
+    
+    <section class="video-section">
+    
+      <div class="container">
+    
+        <h2>Video Demonstrations</h2>
+    
+        <div class="video-grid">
+    
+    
+          <!-- Video 1 -->
+    
+          <div class="video-card">
+    
+            <video controls preload="metadata">
+    
+              <source src="video/1.mp4">
+    
+              Your browser does not support the video tag.
+    
+            </video>
+    
+          </div>
+    
+    
+          <!-- Video 2 -->
+    
+          <div class="video-card">
+    
+            <video controls preload="metadata">
+    
+              <source src="video/2.mp4">
+    
+              Your browser does not support the video tag.
+    
+            </video>
+    
+          </div>
+    
+    
+          <!-- Video 3 -->
+    
+          <div class="video-card">
+    
+            <video controls preload="metadata">
+    
+              <source src="video/3.mp4">
+    
+              Your browser does not support the video tag.
+    
+            </video>
+    
+          </div>
+    
+    
+          <!-- Video 4 -->
+    
+          <div class="video-card">
+    
+            <video controls preload="metadata">
+    
+              <source src="video/4.mp4">
+    
+              Your browser does not support the video tag.
+    
+            </video>
+    
+          </div>
+    
+    
+          <!-- Video 5 -->
+    
+          <div class="video-card">
+    
+            <video controls preload="metadata">
+    
+              <source src="video/5.mp4">
+    
+              Your browser does not support the video tag.
+    
+            </video>
+    
+          </div>
+    
+    
+          <!-- Video 6 -->
+    
+          <div class="video-card">
+    
+            <video controls preload="metadata">
+    
+              <source src="video/6.mp4">
+    
+              Your browser does not support the video tag.
+    
+            </video>
+    
+          </div>
+    
+    
+        </div>
+    
+      </div>
+    
+    </section>
   
 
 
@@ -1949,6 +2123,8 @@
     </div>
 
   </section>
+
+
 
 
 
