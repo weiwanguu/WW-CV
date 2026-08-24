@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Terrestrial, Underwater and Cross-Domain Robotic Manipulators: A Review">
+
+  <meta
+    name="keywords"
+    content="Robotic Manipulator, Mechanical Structures, Perception Modalities, Control Methods, Cross-Domain Manipulation">
+
+
+  <title>
+    Terrestrial, Underwater and Cross-Domain Robotic Manipulators: A Review
+  </title>
+
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #222;
+      background: #ffffff;
+      line-height: 1.7;
+    }
+
+
+    a {
+      color: #2563a6;
+      text-decoration: none;
+    }
+
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+
+    .container {
+      width: min(1000px, 92%);
+      margin: 0 auto;
+    }
+
+
+    /* ==================================================
+       HEADER
+       ================================================== */
+
+    .hero {
+      padding: 70px 0 45px;
+      text-align: center;
+      background: #fafbfc;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+
+    .paper-title {
+      max-width: 1050px;
+      margin: 0 auto;
+      font-size: 2.5rem;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+
+    .authors {
+      margin-top: 25px;
+      font-size: 1.08rem;
+      line-height: 1.9;
+    }
+
+
+    .authors a {
+      margin: 0 5px;
+      white-space: nowrap;
+    }
+
+
+    .affiliations {
+      margin-top: 12px;
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+
+    .correspondence {
+      margin-top: 9px;
+      color: #666;
+      font-size: 0.92rem;
+    }
+
+
+    .venue {
+      margin-top: 18px;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #444;
+    }
+
+
+    .paper-meta {
+      margin-top: 5px;
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+
+    /* ==================================================
+       BUTTONS
+       ================================================== */
+
+    .buttons {
+      margin-top: 28px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 7px;
+      background: #222;
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+
+    .button:hover {
+      text-decoration: none;
+      transform: translateY(-1px);
+      opacity: 0.88;
+    }
+
+
+    /* ==================================================
+       GENERAL SECTIONS
+       ================================================== */
+
+    section {
+      padding: 55px 0;
+    }
+
+
+    section.gray {
+      background: #f8f9fa;
+    }
+
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 25px;
+      font-size: 1.9rem;
+      text-align: center;
+    }
+
+
+    .section-text {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: justify;
+      font-size: 1.02rem;
+    }
+
+
+    /* ==================================================
+       FIGURES
+       ================================================== */
+
+    .figure {
+      margin: 35px auto;
+      max-width: 920px;
+      text-align: center;
+    }
+
+
+    .figure img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+
+    .image-placeholder {
+      width: 100%;
+      min-height: 250px;
+      border: 2px dashed #d0d0d0;
+      border-radius: 8px;
+      background: #fcfcfc;
+      color: #999;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 30px;
+      font-size: 0.95rem;
+    }
+
+
+    .caption {
+      max-width: 900px;
+      margin: 14px auto 0;
+      color: #666;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      text-align: justify;
+    }
+
+
+    /* ==================================================
+       REVIEW SCOPE
+       ================================================== */
+
+    .contributions {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+
+    .contributions li {
+      margin-bottom: 14px;
+    }
+
+
+    /* ==================================================
+       PUBLICATION DETAILS
+       ================================================== */
+
+    .detail-block {
+      max-width: 900px;
+      margin: 0 auto 28px;
+    }
+
+
+    .detail-block h3 {
+      margin: 0 0 8px;
+      font-size: 1.12rem;
+    }
+
+
+    .detail-block p {
+      margin: 0;
+      text-align: justify;
+    }
+
+
+    /* ==================================================
+       BIBTEX
+       ================================================== */
+
+    pre {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 22px;
+      overflow-x: auto;
+      background: #f2f4f6;
+      border-radius: 8px;
+      font-family: Consolas, Monaco, monospace;
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+
+    /* ==================================================
+       FOOTER
+       ================================================== */
+
+    footer {
+      padding: 35px 15px;
+      text-align: center;
+      color: #777;
+      border-top: 1px solid #eeeeee;
+      font-size: 0.88rem;
+    }
+
+
+    /* ==================================================
+       RESPONSIVE
+       ================================================== */
+
+    @media (max-width: 720px) {
+
+      .paper-title {
+        font-size: 1.8rem;
+      }
+
+
+      .hero {
+        padding-top: 45px;
+      }
+
+
+      .image-placeholder {
+        min-height: 180px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+
+<body>
+
+
+  <!-- ==================================================
+       HEADER
+       ================================================== -->
+
+  <header class="hero">
+
+    <div class="container">
+
+
+      <h1 class="paper-title">
+
+        Terrestrial, Underwater and Cross-Domain
+        Robotic Manipulators: A Review
+
+      </h1>
+
+
+
+      <div class="authors">
+
+
+        <!-- Wei Wang -->
+
+        <a
+          href="../../index.html"
+          target="_blank">
+
+          <strong>Wei Wang</strong><sup>1,2,3</sup>
+
+        </a>
+
+
+
+        <!-- Juelong Xiao -->
+
+        <a
+          href="#"
+          target="_blank">
+
+          Juelong Xiao<sup>5</sup>
+
+        </a>
+
+
+
+        <!-- Yijie Luo -->
+
+        <a
+          href="#"
+          target="_blank">
+
+          Yijie Luo<sup>1,2,3</sup>
+
+        </a>
+
+
+
+        <!-- Bin Lei -->
+
+        <a
+          href="#"
+          target="_blank">
+
+          Bin Lei<sup>2,3,4</sup>
+
+        </a>
+
+
+
+        <!-- Zhipeng Wang -->
+
+        <a
+          href="#"
+          target="_blank">
+
+          Zhipeng Wang<sup>2,3,4</sup>
+
+        </a>
+
+
+
+        <!-- Yanmin Zhou -->
+
+        <a
+          href="#"
+          target="_blank">
+
+          Yanmin Zhou<sup>2,3,4</sup>*
+
+        </a>
+
+
+
+        <!-- Bin He -->
+
+        <a
+          href="#"
+          target="_blank">
+
+          Bin He<sup>2,3,4,6</sup>*
+
+        </a>
+
+
+      </div>
+
+
+
+      <!-- ==================================================
+           AFFILIATIONS
+           ================================================== -->
+
+      <div class="affiliations">
+
+
+        <sup>1</sup>
+        Shanghai Research Institute for Intelligent Autonomous Systems,
+        Tongji University, Shanghai, China
+        <br>
+
+
+        <sup>2</sup>
+        The State Key Laboratory of Autonomous Intelligent Unmanned Systems,
+        Shanghai, China
+        <br>
+
+
+        <sup>3</sup>
+        The Frontiers Science Center for Intelligent Autonomous Systems,
+        Shanghai, China
+        <br>
+
+
+        <sup>4</sup>
+        The College of Electronics and Information Engineering,
+        Tongji University, Shanghai, China
+        <br>
+
+
+        <sup>5</sup>
+        Department of Computer Science,
+        City University of Hongkong,
+        Dongguan, China
+        <br>
+
+
+        <sup>6</sup>
+        Shanghai Artificial Intelligence Laboratory,
+        Shanghai, China
+
+
+      </div>
+
+
+
+      <!-- Corresponding authors -->
+
+      <div class="correspondence">
+
+        * Correspondence:
+        yanmin.zhou@tongji.edu.cn;
+        hebin@tongji.edu.cn
+
+      </div>
+
+
+
+      <!-- Journal -->
+
+      <div class="venue">
+
+        Cyborg and Bionic Systems, 2026
+
+      </div>
+
+
+
+      <div class="paper-meta">
+
+        Just Accepted Manuscript
+
+        &nbsp;·&nbsp;
+
+        DOI: 10.34133/cbsystems.0573
+
+      </div>
+
+
+
+      <!-- ==================================================
+           BUTTONS
+           ================================================== -->
+
+      <div class="buttons">
+
+
+        <!-- Paper -->
+
+        <a
+          class="button"
+          href="https://doi.org/10.34133/cbsystems.0573"
+          target="_blank">
+
+          Paper
+
+        </a>
+
+
+
+        <!-- Homepage -->
+
+        <a
+          class="button"
+          href="../../index.html">
+
+          Homepage
+
+        </a>
+
+
+
+        <!--
+        如果以后有视频可以启用：
+
+        <a
+          class="button"
+          href="video/video.mp4"
+          target="_blank">
+
+          Video
+
+        </a>
+        -->
+
+
+        <!--
+        如果以后有代码可以启用：
+
+        <a
+          class="button"
+          href="#"
+          target="_blank">
+
+          Code
+
+        </a>
+        -->
+
+
+      </div>
+
+
+    </div>
+
+  </header>
+
+
+
+  <!-- ==================================================
+       ABSTRACT
+       ================================================== -->
+
+  <section>
+
+    <div class="container">
+
+
+      <h2>Abstract</h2>
+
+
+      <div class="section-text">
+
+        <p>
+
+          Manipulators are critical tools for robots to perform tasks.
+          Terrestrial and underwater robotic manipulators have attracted
+          extensive interest from both scientists and engineers for both
+          research and application purposes.
+
+          This review systematically examines and compares the research
+          progress and challenges of these two types of robotic manipulators
+          across three core aspects: mechanism design, perception modalities,
+          and control methods following a task execution closed loop.
+
+          Moreover, this work elaborates on the current state of cross-domain
+          robotic manipulators inspired by terrestrial and underwater systems,
+          given their increasing application demands and the unique research
+          difficulties spanning two very different media.
+
+          First, the paper analyzes the distinct mechanical structural designs
+          developed to adapt to structured terrestrial environments versus
+          unstructured, high-pressure underwater environments, covering
+          mechanism design, material selection, and actuation methods.
+
+          Second, it explores the characteristics of their perception
+          modalities, including visual, tactile, and visuo-tactile fusion
+          mechanisms.
+
+          Finally, the review summarizes control strategies suitable for
+          terrestrial and underwater environments, ranging from traditional
+          parameter-tuning algorithms to model-based and data-driven control
+          approaches.
+
+          Each comparative review of terrestrial and underwater robotic
+          manipulators is accompanied by insights and challenges in
+          cross-domain robotic manipulators.
+
+          This review also looks ahead to research directions such as
+          adaptive and cross-domain universal manipulation, multimodal fusion,
+          the integration of sensing and control, as well as edge-based
+          intelligent decision-making.
+
+          Thus, this paper not only establishes a unified
+          “structure-perception-control” analytical framework for robotic
+          manipulators, but also discusses potential future directions of
+          cross-domain robotic manipulators, providing a holistic cognitive map
+          and serving as a comprehensive reference for scholars in related fields.
+
+        </p>
+
+
+        <p>
+
+          <strong>Keywords:</strong>
+          Robotic Manipulator,
+          Mechanical Structures,
+          Perception Modalities,
+          Control Methods,
+          Cross-Domain Manipulation.
+
+        </p>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       REVIEW SCOPE
+       ================================================== -->
+
+  <section class="gray">
+
+    <div class="container">
+
+
+      <h2>Review Scope</h2>
+
+
+      <ul class="contributions">
+
+
+        <li>
+
+          A systematic comparison of terrestrial robotic manipulators (TRMs)
+          and underwater robotic manipulators (URMs) is conducted from the
+          perspectives of mechanical structure, materials, actuation methods,
+          perception modalities, and control strategies.
+
+        </li>
+
+
+        <li>
+
+          A unified “structure-perception-control” analytical framework is
+          established to reveal the technical similarities, environmental
+          differences, and developmental trends of terrestrial and underwater
+          robotic manipulation.
+
+        </li>
+
+
+        <li>
+
+          Cross-domain robotic manipulators (CdRMs) are analyzed by integrating
+          insights from terrestrial and underwater systems, with particular
+          attention to cross-medium adaptive design, multimodal perception,
+          sensing-control integration, and edge-based intelligent
+          decision-making.
+
+        </li>
+
+
+      </ul>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 1
+       ================================================== -->
+
+  <section>
+
+    <div class="container">
+
+
+      <h2>Robotic Manipulator Application Domains</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        插入 Fig. 1：
+
+        <img
+          src="images/1.png"
+          alt="Robotic Manipulator Application Domains">
+        -->
+
+
+        <img
+        src="images/1.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Figure 1:
+          </strong>
+
+          Schematic of the robotic manipulator application domains,
+          covering five environments:
+          space [10],
+          aerial [11, 12],
+          terrestrial [6, 14–21],
+          water-land cross-domain [22],
+          and underwater [7, 23–26].
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 2
+       ================================================== -->
+
+  <section class="gray">
+
+    <div class="container">
+
+
+      <h2>Structure, Perception, and Control</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/2.png"
+          alt="Structure Perception and Control">
+        -->
+
+
+        <img
+        src="images/2.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Figure 2:
+          </strong>
+
+          Overview of structure material,
+          perception modalities,
+          and control methods for TRMs,
+          URMs,
+          and CdRMs.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 3
+       ================================================== -->
+
+  <section>
+
+    <div class="container">
+
+
+      <h2>Evolution of Terrestrial and Underwater Manipulators</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/3.png"
+          alt="Evolution of TRMs and URMs">
+        -->
+
+
+        <img
+        src="images/3.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Figure 3:
+          </strong>
+
+          The evolution of TRMs and URMs
+          [5–8, 14–21, 23–26, 28, 31, 35–40, 44–46, 48, 50,
+          53, 54, 57, 59–61, 65, 66, 76, 85–141].
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 4
+       ================================================== -->
+
+  <section class="gray">
+
+    <div class="container">
+
+
+      <h2>Structure, Actuation, and Material Taxonomy</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/4.png"
+          alt="Taxonomy of Structure Actuation and Materials">
+        -->
+
+
+        <img
+        src="images/4.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Figure 4:
+          </strong>
+
+          A taxonomy of structural types,
+          actuation method,
+          and materials in TRMs and URMs.
+
+          <strong>(a)</strong>
+          Types and actuation classification for TRMs.
+
+          <strong>(b)</strong>
+          Material classification for TRMs
+          [5, 6, 14, 17–21, 28, 38, 45, 60, 62, 66,
+          86, 88, 89, 92, 93, 95–102, 107, 110,
+          111, 114, 115, 118, 119].
+
+          <strong>(c)</strong>
+          Types and actuation classification for URMs.
+
+          <strong>(d)</strong>
+          Material classification for URMs
+          [7, 8, 23–26, 35, 36, 122–131, 134, 136–140].
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 5
+       ================================================== -->
+
+  <section>
+
+    <div class="container">
+
+
+      <h2>Comparison of Structural Configurations</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/5.png"
+          alt="Comparison of Structural Configurations">
+        -->
+
+
+        <img
+        src="images/5.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Figure 5:
+          </strong>
+
+          A comparative schematic of the core features,
+          material composition,
+          actuation methods,
+          advantages and disadvantages,
+          and typical applications of the three main structural
+          configurations of robotic manipulators.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 6
+       ================================================== -->
+
+  <section class="gray">
+
+    <div class="container">
+
+
+      <h2>Tactile Sensors for Robotic Manipulators</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/6.png"
+          alt="Tactile Sensors for TRMs and URMs">
+        -->
+
+
+        <img
+        src="images/6.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Figure 6:
+          </strong>
+
+          A comprehensive overview of tactile sensors for TRMs and URMs.
+
+          <strong>TRMs:</strong>
+          capacitive sensor [29, 164];
+          pneumatic sensor [60];
+          fiber-optic sensor [63, 104];
+          electromagnetic sensor [15];
+          vision-based optical tactile sensor [116, 165–168];
+          resistive sensor [75, 106];
+          hydrogel sensor [115];
+          piezoelectric sensor [21];
+          magnetic hall sensor [169–171];
+          optoelectronic sensor [172].
+
+          <strong>URMs:</strong>
+          hydrogel–magnetic sensor [173];
+          piezoelectric sensor [124];
+          optoelectronic sensor [129];
+          magnetic sensor [146, 174];
+          piezoresistive sensor [175];
+          aquatic ion-based sensor [176].
+
+          Note: a “specific sensor” refers to one that is used
+          more extensively in this field than in others.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 7
+       ================================================== -->
+
+  <section>
+
+    <div class="container">
+
+
+      <h2>Comparison of Perception Modalities</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/7.png"
+          alt="Comparison of Perception Modalities">
+        -->
+
+
+        <img
+        src="images/7.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Figure 7:
+          </strong>
+
+          A comparative schematic of the core features,
+          advantages and disadvantages,
+          typical sensors and applications
+          of the three perception modalities
+          of robotic manipulators.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 8
+       ================================================== -->
+
+  <section class="gray">
+
+    <div class="container">
+
+
+      <h2>Control Methods</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/8.png"
+          alt="Classification of Control Methods">
+        -->
+
+
+        <img
+        src="images/8.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Figure 8:
+          </strong>
+
+          A classification diagram of control methods
+          for robotic manipulators,
+          including fundamental methods,
+          variants,
+          and combined forms.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 9
+       ================================================== -->
+
+  <section>
+
+    <div class="container">
+
+
+      <h2>Comparison of Control Strategies</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/9.png"
+          alt="Comparison of Control Methods">
+        -->
+
+
+        <img
+        src="images/9.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Figure 9:
+          </strong>
+
+          A comparative schematic of the core features,
+          design paradigm,
+          advantages and disadvantages,
+          typical algorithms and applications
+          of the three control methods
+          of robotic manipulators.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 10
+       ================================================== -->
+
+  <section class="gray">
+
+    <div class="container">
+
+
+      <h2>Cross-Domain Manipulation Framework</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/10.png"
+          alt="Cross-Domain Manipulation Framework">
+        -->
+
+
+        <img
+        src="images/10.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Figure 10:
+          </strong>
+
+          “Structure-perception-control”
+          operational flowchart for CdRMs.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 11
+       ================================================== -->
+
+  <section>
+
+    <div class="container">
+
+
+      <h2>Research Prospects</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/11.png"
+          alt="Research Prospects of CdRMs">
+        -->
+
+
+        <img
+        src="images/11.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Figure 11:
+          </strong>
+
+          Research prospects of CdRMs
+          inspired by TRMs and URMs.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       SUMMARY AND OUTLOOK
+       ================================================== -->
+
+  <section class="gray">
+
+    <div class="container">
+
+
+      <h2>Summary and Outlook</h2>
+
+
+      <div class="section-text">
+
+        <p>
+
+          This review systematically organizes and compares
+          the research progress and challenges in terrestrial
+          robotic manipulators and underwater robotic manipulators
+          from three core dimensions:
+          mechanical structures,
+          perception modalities,
+          and control methods.
+
+          Future robotic manipulators are expected to integrate
+          the advantages of terrestrial and underwater systems
+          toward cross-medium universal operation and environmental
+          adaptability.
+
+          Structural design and actuation are moving toward
+          rigid-flexible coupling and hybrid actuation,
+          while perception increasingly emphasizes multimodal
+          sensing and deep visuo-tactile integration.
+
+          At the control level,
+          integrated perception-control architectures,
+          end-to-end learning,
+          edge intelligence,
+          and the combination of learning-based and model-based
+          control are expected to play increasingly important roles
+          in enabling reliable,
+          adaptive,
+          and intelligent cross-domain manipulation.
+
+        </p>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+
+
+
+
+  <!-- ==================================================
+       BIBTEX
+       ================================================== -->
+
+  <section class="gray">
+
+    <div class="container">
+
+
+      <h2>BibTeX</h2>
+
+
+      <pre>
+@article{wang2026terrestrial,
+  title   = {Terrestrial, Underwater and Cross-Domain Robotic Manipulators: A Review},
+  author  = {Wang, Wei and Xiao, Juelong and Luo, Yijie and Lei, Bin and Wang, Zhipeng and Zhou, Yanmin and He, Bin},
+  journal = {Cyborg and Bionic Systems},
+  year    = {2026},
+  doi     = {10.34133/cbsystems.0573},
+  note    = {Just Accepted Manuscript}
+}
+      </pre>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FOOTER
+       ================================================== -->
+
+  <footer>
+
+
+    © 2026 Wei Wang · Project Page
+
+
+    <br>
+
+
+    <a href="../../index.html">
+
+      Back to Homepage
+
+    </a>
+
+
+  </footer>
+
+
+</body>
+
+</html>

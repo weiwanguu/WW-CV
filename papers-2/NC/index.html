@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    High-strength liquid metal composite–hydrogel interfaces enable robust stretchable electronics
+  </title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #222;
+      background: #ffffff;
+      line-height: 1.7;
+    }
+
+    a {
+      color: #2563a6;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(1000px, 92%);
+      margin: 0 auto;
+    }
+
+    /* =========================
+       Header
+       ========================= */
+
+    .hero {
+      padding: 70px 0 45px;
+      text-align: center;
+      background: #fafbfc;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .paper-title {
+      max-width: 1050px;
+      margin: 0 auto;
+      font-size: 2.5rem;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    .authors {
+      margin-top: 25px;
+      font-size: 1.08rem;
+      line-height: 1.9;
+    }
+
+    .authors a {
+      margin: 0 5px;
+      white-space: nowrap;
+    }
+
+    .affiliations {
+      margin-top: 12px;
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .correspondence {
+      margin-top: 8px;
+      color: #666;
+      font-size: 0.92rem;
+    }
+
+    .venue {
+      margin-top: 18px;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #444;
+    }
+
+    .paper-meta {
+      margin-top: 4px;
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    /* =========================
+       Buttons
+       ========================= */
+
+    .buttons {
+      margin-top: 28px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 7px;
+      background: #222;
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      text-decoration: none;
+      transform: translateY(-1px);
+      opacity: 0.88;
+    }
+
+    /* =========================
+       General sections
+       ========================= */
+
+    section {
+      padding: 55px 0;
+    }
+
+    section.gray {
+      background: #f8f9fa;
+    }
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 25px;
+      font-size: 1.9rem;
+      text-align: center;
+    }
+
+    .section-text {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: justify;
+      font-size: 1.02rem;
+    }
+
+    /* =========================
+       Figure blocks
+       ========================= */
+
+    .figure {
+      margin: 35px auto;
+      max-width: 920px;
+      text-align: center;
+    }
+
+    .figure img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .image-placeholder {
+      min-height: 260px;
+      width: 100%;
+      border: 2px dashed #cfcfcf;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      color: #999;
+      background: #fcfcfc;
+      font-size: 0.95rem;
+    }
+
+    .caption {
+      max-width: 900px;
+      margin: 14px auto 0;
+      color: #666;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      text-align: justify;
+    }
+
+    /* =========================
+       Highlights
+       ========================= */
+
+    .contributions {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .contributions li {
+      margin-bottom: 14px;
+    }
+
+    /* =========================
+       Publication details
+       ========================= */
+
+    .detail-block {
+      max-width: 900px;
+      margin: 0 auto 28px;
+    }
+
+    .detail-block h3 {
+      margin: 0 0 8px;
+      font-size: 1.12rem;
+    }
+
+    .detail-block p {
+      margin: 0;
+      text-align: justify;
+    }
+
+    /* =========================
+       BibTeX
+       ========================= */
+
+    pre {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 22px;
+      overflow-x: auto;
+      background: #f2f4f6;
+      border-radius: 8px;
+      font-family: Consolas, Monaco, monospace;
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    /* =========================
+       Footer
+       ========================= */
+
+    footer {
+      padding: 35px 15px;
+      text-align: center;
+      color: #777;
+      border-top: 1px solid #eeeeee;
+      font-size: 0.88rem;
+    }
+
+    /* =========================
+       Responsive
+       ========================= */
+
+    @media (max-width: 720px) {
+
+      .paper-title {
+        font-size: 1.8rem;
+      }
+
+      .hero {
+        padding-top: 45px;
+      }
+
+      .image-placeholder {
+        min-height: 180px;
+      }
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- ==================================================
+       HEADER
+       ================================================== -->
+
+  <header class="hero">
+
+    <div class="container">
+
+
+      <h1 class="paper-title">
+        High-strength liquid metal composite–hydrogel interfaces enable robust stretchable electronics
+      </h1>
+
+
+      <div class="authors">
+
+        <!-- 作者主页链接可自行替换 -->
+
+        <a href="#" target="_blank">
+          Bingqian Jiao<sup>1</sup>
+        </a>
+
+        <a href="../../index.html" target="_blank">
+          <strong>Wei Wang</strong><sup>2</sup>
+        </a>
+
+        <a href="#" target="_blank">
+          Yang Feng<sup>1</sup>
+        </a>
+
+        <a href="#" target="_blank">
+          Dingze Zhou<sup>1</sup>
+        </a>
+
+        <a href="#" target="_blank">
+          Xinghua Wang<sup>1</sup>
+        </a>
+
+        <a href="#" target="_blank">
+          Yanmin Zhou<sup>2</sup>
+        </a>
+
+        <a href="#" target="_blank">
+          Xia Wang<sup>1</sup>
+        </a>
+
+        <a href="#" target="_blank">
+          Yinghui Shang<sup>1</sup>*
+        </a>
+
+        <a href="#" target="_blank">
+          Qigang Wang<sup>1,2</sup>*
+        </a>
+
+      </div>
+
+
+      <div class="affiliations">
+
+        <sup>1</sup>
+        School of Chemical Science and Engineering,
+        Tongji University, Shanghai, PR China
+        <br>
+
+        <sup>2</sup>
+        National Key Laboratory of Autonomous Intelligent Unmanned Systems,
+        Frontiers Science Centre for Intelligent Autonomous Systems
+        (Ministry of Education),
+        Tongji University, Shanghai, PR China
+
+      </div>
+
+
+      <div class="correspondence">
+        * Correspondence:
+        24060@tongji.edu.cn;
+        wangqg66@tongji.edu.cn
+      </div>
+
+
+      <div class="venue">
+        Nature Communications, 2026, 17:5322
+      </div>
+
+
+      <div class="paper-meta">
+        Received: 8 September 2025
+        &nbsp;·&nbsp;
+        Accepted: 31 March 2026
+      </div>
+
+
+      <div class="buttons">
+
+        <!-- 论文正式链接 -->
+
+        <a
+          class="button"
+          href="https://doi.org/10.1038/s41467-026-71920-z"
+          target="_blank">
+          Paper
+        </a>
+
+
+        <!--
+        如果以后有补充材料、视频或代码，可直接启用：
+
+        <a class="button"
+           href="#"
+           target="_blank">
+          Supplementary
+        </a>
+
+        <a class="button"
+           href="#"
+           target="_blank">
+          Video
+        </a>
+
+        <a class="button"
+           href="#"
+           target="_blank">
+          Code
+        </a>
+        -->
+
+
+        <a
+          class="button"
+          href="../../index.html">
+          Homepage
+        </a>
+
+      </div>
+
+
+    </div>
+
+  </header>
+
+
+
+  <!-- ==================================================
+       TEASER
+       如果需要总览图，可以在这里加入
+       ================================================== -->
+
+  <!--
+
+  <section>
+
+    <div class="container">
+
+      <div class="figure">
+
+        <img
+          src="images/teaser.png"
+          alt="Teaser">
+
+      </div>
+
+    </div>
+
+  </section>
+
+  -->
+
+
+
+  <!-- ==================================================
+       ABSTRACT
+       ================================================== -->
+
+  <section>
+
+    <div class="container">
+
+
+      <h2>Abstract</h2>
+
+
+      <div class="section-text">
+
+        <p>
+
+          Stretchable conductors are essential building blocks for
+          next-generation wearable electronics and soft robotics.
+          Among them, liquid metal-based conductors offer exceptional
+          deformability but suffer from poor interfacial adhesion to
+          substrates, often resulting in leakage under mechanical stress
+          that compromises electromechanical stability and device durability.
+
+          Here we report a universal interface-fusion printing strategy
+          for fabricating metal-particle semi-embedded hydrogels,
+          in which interconnected liquid metal and silver particles are
+          firmly anchored at the hydrogel surface.
+
+          The resulting liquid metal-based composite layer achieves a
+          high interfacial adhesion strength of 234.4 kPa to the hydrogel
+          substrate and a conductivity of
+          1.18 × 10<sup>6</sup> S m<sup>−1</sup>.
+
+          This robust interface prevents liquid metal leakage and ensures
+          stable electrical connection under extreme conditions,
+          including prolonged ultrasonication, 300 MPa impacts,
+          and thousands of stretching cycles.
+
+          The strategy forms an interpenetrating cross-linked polymer
+          network through cross-interfacial assembly,
+          fusing the circuit and substrate into an integrated structure.
+
+          This simple and scalable method enables the fabrication of
+          high-resolution circuits for a wide range of electronic devices.
+
+          We demonstrate its performance in applications including
+          stretchable circuits, on-skin biosensors,
+          and underwater soft robots.
+
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       KEY HIGHLIGHTS
+       ================================================== -->
+
+  <section class="gray">
+
+    <div class="container">
+
+
+      <h2>Key Highlights</h2>
+
+
+      <ul class="contributions">
+
+
+        <li>
+
+          A universal interface-fusion printing strategy is developed
+          to fabricate metal-particle semi-embedded hydrogels (MPEH),
+          in which interconnected liquid metal and silver particles
+          are firmly anchored at the hydrogel surface through an
+          interpenetrating cross-linked PVA network.
+
+        </li>
+
+
+        <li>
+
+          The MPEH achieves an interfacial adhesion strength of
+          234.4 kPa and a conductivity of
+          1.18 × 10<sup>6</sup> S m<sup>−1</sup>,
+          while maintaining robust electrical performance under
+          prolonged ultrasonication, repeated 300 MPa impacts,
+          thousands of stretching cycles,
+          and large tensile deformation.
+
+        </li>
+
+
+        <li>
+
+          The strategy enables high-resolution stretchable circuits
+          and is demonstrated in functional circuits,
+          epidermal biosensors,
+          and an underwater hydrogel jellyfish robot
+          with visual feedback during locomotion.
+
+        </li>
+
+
+      </ul>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 1
+       ================================================== -->
+
+  <section>
+
+    <div class="container">
+
+
+      <h2>Overview of MPEH</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        在这里插入 Fig. 1：
+
+        <img
+          src="images/1.png"
+          alt="Overview of MPEH">
+        -->
+
+          <!-- 换成你的系统图 -->
+          <img
+            src="images/1.png"
+            alt="System Overview">
+
+ 
+
+
+        <div class="caption">
+
+          <strong>
+            Fig. 1 | Overview of the metal-particle semi-embedded hydrogel (MPEH).
+          </strong>
+
+          <strong>a</strong>
+          Schematic illustration of the components and the fabrication
+          process of MPEH. The flexible mask used for patterning was
+          fabricated from 300 µm-thick thermoplastic polyurethane
+          via laser engraving.
+
+          <strong>b</strong>
+          Micro-computed tomography (micro-CT) image showing the
+          semi-embedded structure of LM/Ag particles in MPEH.
+          Scale bar, 400 µm.
+
+          <strong>c</strong>
+          Cross-sectional SEM image of MPEH showing seamless integration
+          of the LM/Ag circuit with the PVA hydrogel substrate,
+          with no visible gap. The LM/Ag particles form a stable
+          conductive pathway. Scale bar, 50 µm.
+
+          <strong>d</strong>
+          Optical images of the ‘GEL’ LED array integrated on the MPEH
+          before and after stretching to 200% strain.
+          Scale bar, 1 cm.
+
+          <strong>e</strong>
+          Optical image of various conductive patterns,
+          including snowflake, dumbbell, circular,
+          and linear geometries fabricated on the MPEH.
+          Scale bar, 1 cm.
+
+          <strong>f</strong>
+          Optical image showing the MPEH-based
+          photoplethysmography (PPG) sensor conformally adhering
+          to human skin, maintaining stable and intimate contact
+          during skin deformation. Scale bar, 1 cm.
+
+          <strong>g</strong>
+          Optical image of the hydrogel jellyfish robot during
+          underwater locomotion. The jellyfish body,
+          made of PVA hydrogel,
+          was integrated with MPEH-based circuits and LEDs,
+          with LED colour indicating swimming speed.
+          The high transparency, stretchability,
+          and underwater durability of the MPEH enable stable
+          and intuitive visualisation of output signals.
+          Scale bar, 5 cm.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 2
+       ================================================== -->
+
+  <section class="gray">
+
+    <div class="container">
+
+
+      <h2>Interface-Fusion Printing Strategy</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/2.png"
+          alt="Interface-Fusion Printing Strategy">
+        -->
+
+
+        <img
+        src="images/2.png"
+
+
+        <div class="caption">
+
+          <strong>
+            Fig. 2 | Mechanism of the interface-fusion printing strategy
+            and interfacial robustness of the MPEH.
+          </strong>
+
+          <strong>a</strong>
+          Schematic illustration of the fabrication process of the MPEH.
+          The formation of an interpenetrating PVA crystalline network
+          between the LM/Ag circuit and the substrate affords strong
+          interfacial adhesion and enhances the mechanical stability
+          of the circuit.
+
+          <strong>b</strong>
+          Optical and laser confocal microscopy images of the
+          ink–hydrogel interface before and after drying.
+          They reveal the distribution of PVA chains originating
+          from both the composite ink and the hydrogel substrate.
+          Drying promotes interdiffusion and entanglement of PVA chains,
+          resulting in an interfacial overlap approximately 60 µm thick.
+          The PVA in the ink was grafted with fluorescein
+          isothiocyanate (FITC) groups,
+          while the PVA in the hydrogel substrate was grafted
+          with rhodamine B isothiocyanate (RBITC) groups.
+          FITC emits green fluorescence under 488 nm excitation,
+          while RBITC emits red fluorescence under 561 nm excitation.
+
+          <strong>c</strong>
+          Wide-angle X-ray scattering (WAXS) patterns of the
+          PVA hydrogel substrate before and after drying.
+
+          <strong>d</strong>
+          SEM images of the cross-section and surface of the MPEH.
+          LM/Ag particles are partially embedded in the hydrogel surface,
+          and the conductive layer is seamlessly integrated
+          with the substrate.
+          Scale bar, 100 µm.
+
+          <strong>e</strong>
+          Micro-CT image showing the uniform semi-embedded structure
+          of the MPEH over a macroscopic area of 4 mm × 4 mm.
+          Scale bar, 400 µm.
+
+          <strong>f</strong>
+          Lap-shear test setup (left) and measured interfacial shear
+          strength (right) of the LM/Ag/PVA conductive layer
+          on different types of flexible substrates.
+          Inset: optical image illustrating the robust interface
+          of the MPEH.
+          Scale bar, 1 cm.
+          Data are presented as mean values ± standard deviation
+          (n = 3).
+
+          <strong>g</strong>
+          Comparison of interfacial adhesion strength and electrical
+          conductivity of various conductive materials
+          on different substrates.
+          References are provided in the Supplementary Information.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 3
+       ================================================== -->
+
+  <section>
+
+    <div class="container">
+
+
+      <h2>Mechanical and Electrical Properties</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/3.png"
+          alt="Mechanical and Electrical Properties of MPEH">
+        -->
+
+
+        <img
+        src="images/3.png"
+
+
+        <div class="caption">
+
+          <strong>
+            Fig. 3 | Mechanical and electrical properties
+            and stability of MPEH.
+          </strong>
+
+          <strong>a</strong>
+          Optical images of the LM/Ag/PVA conductive layer
+          on different substrates before and after stretching.
+          Scale bar, 1 cm.
+
+          <strong>b</strong>
+          Finite element analysis simulation showing stress distribution
+          under stretching at varying interfacial bonding strengths
+          between the conductive layer and the substrate.
+
+          <strong>c</strong>
+          Optical images comparing the mechanical integrity of the MPEH
+          and a LM-coated hydrogel (LCH)
+          before and after 60 W ultrasonication.
+          The LCH was fabricated by stencil-printing bulk liquid metal
+          onto a PVA hydrogel substrate.
+          Scale bar, 1 cm.
+
+          <strong>d</strong>
+          Surface resistance of the MPEH and the LCH
+          as a function of ultrasonication time.
+          Measurements were performed using a Keithley DMM6500
+          digital multimeter in a four-terminal configuration
+          to ensure accuracy and minimise external interference.
+          Data are presented as mean values ± standard deviation
+          (n = 3).
+
+          <strong>e</strong>
+          Resistance changes of the MPEH and the LCH during
+          repetitive impact testing,
+          in which a 100 g ball was dropped from a height of 1 m,
+          generating an impact stress of 300 MPa per strike.
+
+          Curves of <strong>f</strong>, stress-strain and
+          <strong>g</strong> conductivity and elongation at break
+          of MPEH with varying LM/Ag particle loading.
+          Data are presented as mean values ± standard deviation
+          (n = 3).
+
+          <strong>h</strong>
+          Relative resistance change as a function of uniaxial
+          tensile strain for MPEH with varying LM/Ag particle loading,
+          along with a theoretical prediction based on bulk conductor
+          assumptions (dashed line).
+
+          <strong>i</strong>
+          Relative resistance change of MPEH over
+          1000 stretching cycles under 100% strain.
+
+          <strong>j</strong>
+          Contact resistance between MPEH conductive traces and
+          metal pins of electronic components measured using the
+          transmission line method.
+          Linear fitting yields a contact resistance
+          (R<sub>c</sub>) of 0.03 Ω
+          (R<sup>2</sup> = 0.995).
+          Inset: schematic illustration of the sample layout
+          for contact resistance measurement.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 4
+       ================================================== -->
+
+  <section class="gray">
+
+    <div class="container">
+
+
+      <h2>Functional Circuits</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/4.png"
+          alt="Functional Circuits Based on MPEH">
+        -->
+
+
+        <img
+        src="images/4.png"
+
+
+        <div class="caption">
+
+          <strong>
+            Fig. 4 | Functional circuits based on MPEH.
+          </strong>
+
+          <strong>a</strong>
+          Schematic illustration of the assembly
+          of flexible functional circuits.
+
+          <strong>b</strong>
+          Optical images of a complex multi-LED circuit
+          in the flat state (top)
+          and conformally wrapped around a wrist (bottom).
+          The circuit exhibits a high integration density
+          of 4 electronic components per square centimetre
+          while retaining good flexibility
+          and conformal contact with the skin.
+
+          <strong>c</strong>
+          Optical images of a dual-LED stroboscopic circuit
+          operating at a frequency of 1.46 Hz.
+          The circuit consists of four resistors,
+          one capacitor,
+          two LEDs,
+          and an NE555N integrated circuit (IC).
+
+          <strong>d</strong>
+          A demonstration of the stroboscopic circuit
+          retaining functional integrity under three
+          mechanical deformations:
+          (i) uniaxial stretching,
+          (ii) biaxial stretching,
+          and (iii) folding.
+
+          <strong>e</strong>
+          A miniaturised LED circuit integrated on a fingertip.
+
+          <strong>f</strong>
+          Photograph illustrating the stable operation
+          of an MPEH-based LED circuit after
+          12 hours of water immersion.
+          The circuit’s underwater stability arises from
+          the anti-swelling properties of the PVA hydrogel substrate
+          and the inherent hydrophobicity of the LM/Ag particles.
+          Scale bars, 1 cm.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 5
+       ================================================== -->
+
+  <section>
+
+    <div class="container">
+
+
+      <h2>Epidermal Biosensors</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/5.png"
+          alt="Epidermal Biosensors Based on MPEH">
+        -->
+
+
+        <img
+        src="images/5.png"
+
+
+        <div class="caption">
+
+          <strong>
+            Fig. 5 | Epidermal biosensors based on MPEH.
+          </strong>
+
+          <strong>a</strong>
+          Diverse epidermal sensors for acquiring
+          a broad spectrum of physiological signals,
+          including human motion,
+          cardiac pulse,
+          and electromyographic (EMG) activity.
+
+          <strong>b</strong>
+          Optical image of a strain sensor placed on the index finger.
+          A strain-sensing layer composed of silver microflakes
+          was located in Region 2 (R2).
+          Mechanical deformation induced microcracks in the layer,
+          resulting in pronounced changes in electrical resistance.
+          Sensor resistance was measured using a digital multimetre
+          (Keithley DMM6500).
+          Scale bar, 1 cm.
+
+          <strong>c</strong>
+          Resistance response curves of the strain sensor
+          during bending at Region 1 (R1)
+          and Region 2 (R2).
+          R1 contained no silver-based strain element,
+          and the MPEH-based circuit maintained stable resistance
+          during deformation,
+          ensuring that the output signal remained unaffected
+          by mechanical disturbances in non-sensing areas.
+
+          <strong>d</strong>
+          Optical image of a photoplethysmography (PPG)
+          sensor placed on the wrist.
+          The circuit design is detailed in the Methods section.
+          Output voltage signals were recorded using an oscilloscope.
+          Scale bar, 1 cm.
+
+          <strong>e</strong>
+          Real-time pulse waveforms captured by the PPG sensor.
+
+          <strong>f</strong>
+          Optical image of three strip-shaped MPEH bioelectrodes
+          conformally attached to the forearm.
+          The ionically conductive PVA hydrogel substrate
+          adhered to the skin,
+          whereas the electronically conductive layer interfaced
+          with metal clips,
+          establishing a seamless ion-to-electron conduction pathway
+          between the skin and external electronic devices.
+
+          <strong>g</strong>
+          EMG signals recorded from the bioelectrodes
+          under varying grip strengths.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 6
+       ================================================== -->
+
+  <section class="gray">
+
+    <div class="container">
+
+
+      <h2>Underwater Jellyfish Robot</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/6.png"
+          alt="MPEH-Based Jellyfish Robot">
+        -->
+
+        <img
+        src="images/6.png"
+
+
+        <div class="caption">
+
+          <strong>
+            Fig. 6 | MPEH-based jellyfish robot.
+          </strong>
+
+          <strong>a</strong>
+          Simplified block diagram of the circuit design
+          for the jellyfish robot.
+          Underwater motion commands are transmitted from
+          a computer through a wireless communication module.
+          Powered by a compact,
+          constant-voltage 5 V lithium-ion battery,
+          the jellyfish robot employs a control system
+          to regulate motor speed and the on/off state
+          of the two LEDs.
+
+          <strong>b</strong>
+          Optical image of the jellyfish robot.
+          The power supply,
+          control-system PCB,
+          motor-driver PCB,
+          and wireless communication module
+          are housed within the head shell.
+          A motor,
+          linked to the six tentacles via a transmission mechanism,
+          controls the swimming speed.
+          The body,
+          fabricated from PVA hydrogel,
+          replicates the morphology of a real jellyfish.
+          An MPEH-based circuit bearing two LEDs
+          is mounted on the hydrogel body.
+          Scale bar, 5 cm.
+
+          <strong>c</strong>
+          Real-time optical images of the jellyfish robot
+          swimming upward and downward.
+          Owing to the high transparency of the MPEH
+          and the circuit’s underwater mechanical stability,
+          swimming speed is intuitively indicated
+          in real time via LED colour changes:
+          blue indicates fast swimming,
+          while green indicates slow swimming.
+          Scale bar, 10 cm.
+
+          <strong>d</strong>
+          Displacement-time curve of the jellyfish robot
+          during swimming.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+<!-- ==================================================
+     VIDEO DEMONSTRATIONS
+     ================================================== -->
+
+     <style>
+
+      .video-section {
+        padding: 45px 0 55px;
+      }
+    
+      .video-section .container {
+        width: min(1000px, 92%);
+        margin: 0 auto;
+      }
+    
+      .video-section h2 {
+        margin-top: 0;
+        margin-bottom: 28px;
+        font-size: 1.9rem;
+        text-align: center;
+      }
+    
+      .video-grid {
+        display: grid;
+    
+        /* 一行三个视频 */
+        grid-template-columns: repeat(3, 240px);
+    
+        gap: 200px;
+    
+        justify-content: center;
+        align-items: start;
+    
+        margin: 0 auto;
+      }
+    
+      .video-card {
+        width: 240px;
+      }
+    
+      .video-card video {
+        width: 420px;
+        height: auto;
+    
+        display: block;
+    
+        border-radius: 6px;
+        background: #000;
+      }
+    
+      /* 平板 */
+      @media (max-width: 820px) {
+    
+        .video-grid {
+          grid-template-columns: repeat(2, 240px);
+        }
+    
+      }
+    
+      /* 手机 */
+      @media (max-width: 540px) {
+    
+        .video-grid {
+          grid-template-columns: 240px;
+        }
+    
+      }
+    
+    </style>
+    
+    
+    <section class="video-section">
+    
+      <div class="container">
+    
+        <h2>Video Demonstrations</h2>
+    
+        <div class="video-grid">
+    
+    
+          <!-- Video 1 -->
+    
+          <div class="video-card">
+    
+            <video controls preload="metadata">
+    
+              <source src="video/1.mov">
+    
+              Your browser does not support the video tag.
+    
+            </video>
+    
+          </div>
+    
+    
+          <!-- Video 2 -->
+    
+          <div class="video-card">
+    
+            <video controls preload="metadata">
+    
+              <source src="video/2.mov">
+    
+              Your browser does not support the video tag.
+    
+            </video>
+    
+          </div>
+    
+    
+          <!-- Video 3 -->
+    
+          <div class="video-card">
+    
+            <video controls preload="metadata">
+    
+              <source src="video/3.mov">
+    
+              Your browser does not support the video tag.
+    
+            </video>
+    
+          </div>
+    
+    
+          <!-- Video 4 -->
+    
+          <div class="video-card">
+    
+            <video controls preload="metadata">
+    
+              <source src="video/4.mov">
+    
+              Your browser does not support the video tag.
+    
+            </video>
+    
+          </div>
+    
+    
+          <!-- Video 5 -->
+    
+          <div class="video-card">
+    
+            <video controls preload="metadata">
+    
+              <source src="video/5.mov">
+    
+              Your browser does not support the video tag.
+    
+            </video>
+    
+          </div>
+    
+    
+          <!-- Video 6 -->
+    
+          <div class="video-card">
+    
+            <video controls preload="metadata">
+    
+              <source src="video/6.mov">
+    
+              Your browser does not support the video tag.
+    
+            </video>
+    
+          </div>
+    
+    
+        </div>
+    
+      </div>
+    
+    </section>
+
+
+  
+
+
+
+  <!-- ==================================================
+       BIBTEX
+       ================================================== -->
+
+  <section class="gray">
+
+    <div class="container">
+
+
+      <h2>BibTeX</h2>
+
+
+      <pre>
+@article{jiao2026highstrength,
+  title   = {High-strength liquid metal composite--hydrogel interfaces enable robust stretchable electronics},
+  author  = {Jiao, Bingqian and Wang, Wei and Feng, Yang and Zhou, Dingze and Wang, Xinghua and Zhou, Yanmin and Wang, Xia and Shang, Yinghui and Wang, Qigang},
+  journal = {Nature Communications},
+  volume  = {17},
+  pages   = {5322},
+  year    = {2026},
+  doi     = {10.1038/s41467-026-71920-z}
+}
+      </pre>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FOOTER
+       ================================================== -->
+
+  <footer>
+
+    © The Author(s) 2026 · Project Page
+
+    <br>
+
+    <a href="../../index.html">
+      Back to Homepage
+    </a>
+
+  </footer>
+
+
+</body>
+
+</html>
