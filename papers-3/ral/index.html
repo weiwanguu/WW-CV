@@ -1,0 +1,1832 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Design and Implementation of a Miniature Jellyfish-Inspired Robot">
+
+  <meta
+    name="keywords"
+    content="Jellyfish Robot, Bio-inspired Robot, Underwater Robot, Mechanism Design, Embedded Systems">
+
+
+  <title>
+    Design and Implementation of a Miniature Jellyfish-Inspired Robot
+  </title>
+
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #222;
+      background: #ffffff;
+      line-height: 1.7;
+    }
+
+
+    a {
+      color: #2563a6;
+      text-decoration: none;
+    }
+
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+
+    .container {
+      width: min(1000px, 92%);
+      margin: 0 auto;
+    }
+
+
+    /* ==================================================
+       HEADER
+       ================================================== */
+
+    .hero {
+      padding: 70px 0 45px;
+      text-align: center;
+      background: #fafbfc;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+
+    .paper-title {
+      max-width: 1050px;
+      margin: 0 auto;
+      font-size: 2.5rem;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+
+    .authors {
+      margin-top: 25px;
+      font-size: 1.08rem;
+      line-height: 1.9;
+    }
+
+
+    .authors a {
+      margin: 0 5px;
+      white-space: nowrap;
+    }
+
+
+    .affiliations {
+      margin-top: 12px;
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+
+    .correspondence {
+      margin-top: 9px;
+      color: #666;
+      font-size: 0.92rem;
+    }
+
+
+    .venue {
+      margin-top: 18px;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #444;
+    }
+
+
+    .paper-meta {
+      margin-top: 5px;
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+
+    /* ==================================================
+       BUTTONS
+       ================================================== */
+
+    .buttons {
+      margin-top: 28px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 7px;
+      background: #222;
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+
+    .button:hover {
+      text-decoration: none;
+      transform: translateY(-1px);
+      opacity: 0.88;
+    }
+
+
+    /* ==================================================
+       GENERAL
+       ================================================== */
+
+    section {
+      padding: 55px 0;
+    }
+
+
+    section.gray {
+      background: #f8f9fa;
+    }
+
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 25px;
+      font-size: 1.9rem;
+      text-align: center;
+    }
+
+
+    .section-text {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: justify;
+      font-size: 1.02rem;
+    }
+
+
+    /* ==================================================
+       FIGURES
+       ================================================== */
+
+    .figure {
+      margin: 35px auto;
+      max-width: 920px;
+      text-align: center;
+    }
+
+
+    .figure img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+
+    .image-placeholder {
+      width: 100%;
+      min-height: 250px;
+
+      border: 2px dashed #d0d0d0;
+      border-radius: 8px;
+
+      background: #fcfcfc;
+      color: #999;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 30px;
+
+      font-size: 0.95rem;
+    }
+
+
+    .caption {
+      max-width: 900px;
+      margin: 14px auto 0;
+
+      color: #666;
+
+      font-size: 0.92rem;
+      line-height: 1.55;
+
+      text-align: justify;
+    }
+
+
+    /* ==================================================
+       HIGHLIGHTS
+       ================================================== */
+
+    .contributions {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+
+    .contributions li {
+      margin-bottom: 14px;
+    }
+
+
+    /* ==================================================
+       TABLE
+       ================================================== */
+
+    .spec-table {
+      width: 100%;
+      max-width: 850px;
+
+      margin: 25px auto;
+
+      border-collapse: collapse;
+
+      font-size: 0.95rem;
+    }
+
+
+    .spec-table th,
+    .spec-table td {
+      border: 1px solid #dddddd;
+      padding: 10px 14px;
+      text-align: center;
+    }
+
+
+    .spec-table th {
+      background: #f2f4f6;
+      font-weight: 600;
+    }
+
+
+    /* ==================================================
+       PUBLICATION DETAILS
+       ================================================== */
+
+    .detail-block {
+      max-width: 900px;
+      margin: 0 auto 28px;
+    }
+
+
+    .detail-block h3 {
+      margin: 0 0 8px;
+      font-size: 1.12rem;
+    }
+
+
+    .detail-block p {
+      margin: 0;
+      text-align: justify;
+    }
+
+
+    /* ==================================================
+       BIBTEX
+       ================================================== */
+
+    pre {
+      max-width: 900px;
+      margin: 0 auto;
+
+      padding: 22px;
+
+      overflow-x: auto;
+
+      background: #f2f4f6;
+
+      border-radius: 8px;
+
+      font-family: Consolas, Monaco, monospace;
+      font-size: 0.9rem;
+
+      line-height: 1.55;
+    }
+
+
+    /* ==================================================
+       FOOTER
+       ================================================== */
+
+    footer {
+      padding: 35px 15px;
+
+      text-align: center;
+
+      color: #777;
+
+      border-top: 1px solid #eeeeee;
+
+      font-size: 0.88rem;
+    }
+
+
+    /* ==================================================
+       RESPONSIVE
+       ================================================== */
+
+    @media (max-width: 720px) {
+
+      .paper-title {
+        font-size: 1.8rem;
+      }
+
+
+      .hero {
+        padding-top: 45px;
+      }
+
+
+      .image-placeholder {
+        min-height: 180px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+
+<body>
+
+
+  <!-- ==================================================
+       HEADER
+       ================================================== -->
+
+  <header class="hero">
+
+    <div class="container">
+
+
+      <h1 class="paper-title">
+
+        Design and Implementation of a Miniature
+        Jellyfish-Inspired Robot
+
+      </h1>
+
+
+
+      <div class="authors">
+
+
+        <!-- Wei Wang -->
+
+        <a
+          href="../../index.html"
+          target="_blank">
+
+          <strong>Wei Wang</strong>
+
+        </a>
+
+
+
+        <!-- Weiqiang Li -->
+
+        <a
+          href="#"
+          target="_blank">
+
+          Weiqiang Li
+
+        </a>
+
+
+
+        <!-- Jinchang Xu -->
+
+        <a
+          href="#"
+          target="_blank">
+
+          Jinchang Xu
+
+        </a>
+
+
+
+        <!-- Jiawei Dong -->
+
+        <a
+          href="#"
+          target="_blank">
+
+          Jiawei Dong
+
+        </a>
+
+
+
+        <!-- Chaoqun Xiang -->
+
+        <a
+          href="#"
+          target="_blank">
+
+          Chaoqun Xiang
+
+        </a>
+
+
+
+        <!-- Yisheng Guan -->
+
+        <a
+          href="#"
+          target="_blank">
+
+          Yisheng Guan
+
+        </a>
+
+
+
+        <!-- Tao Zhang -->
+
+        <a
+          href="#"
+          target="_blank">
+
+          Tao Zhang*
+
+        </a>
+
+
+      </div>
+
+
+
+      <!-- ==================================================
+           AFFILIATION
+           ================================================== -->
+
+      <div class="affiliations">
+
+        School of Electromechanical Engineering,
+        Guangdong University of Technology,
+        Guangzhou 510006, China
+
+      </div>
+
+
+
+      <!-- Corresponding author -->
+
+      <div class="correspondence">
+
+        * Corresponding author:
+        Tao Zhang
+        &nbsp;·&nbsp;
+        tzhang@gdut.edu.cn
+
+      </div>
+
+
+
+      <!-- Journal -->
+
+      <div class="venue">
+
+        IEEE Robotics and Automation Letters
+
+      </div>
+
+
+
+      <div class="paper-meta">
+
+        Vol. 8, No. 6, June 2023
+
+        &nbsp;·&nbsp;
+
+        pp. 3134–3141
+
+        &nbsp;·&nbsp;
+
+        DOI: 10.1109/LRA.2023.3265585
+
+      </div>
+
+
+
+      <div class="paper-meta">
+
+        Received: 31 October 2022
+
+        &nbsp;·&nbsp;
+
+        Accepted: 17 March 2023
+
+        &nbsp;·&nbsp;
+
+        Published: 7 April 2023
+
+      </div>
+
+
+
+      <!-- ==================================================
+           BUTTONS
+           ================================================== -->
+
+      <div class="buttons">
+
+
+        <!-- Paper -->
+
+        <a
+          class="button"
+          href="https://doi.org/10.1109/LRA.2023.3265585"
+          target="_blank">
+
+          Paper
+
+        </a>
+
+
+
+        <!-- Homepage -->
+
+        <a
+          class="button"
+          href="../../index.html">
+
+          Homepage
+
+        </a>
+
+
+
+        <!--
+        如果你后面想放视频按钮，可以启用：
+
+        <a
+          class="button"
+          href="#video"
+          target="_blank">
+
+          Video
+
+        </a>
+        -->
+
+
+      </div>
+
+
+    </div>
+
+  </header>
+
+
+
+  <!-- ==================================================
+       ABSTRACT
+       ================================================== -->
+
+  <section>
+
+    <div class="container">
+
+
+      <h2>Abstract</h2>
+
+
+      <div class="section-text">
+
+
+        <p>
+
+          With the development of the global marine industry,
+          the demand to investigate underwater environments using
+          robots is increasing.
+
+          Inspired by the unique structure and excellent swimming
+          ability of <i>Aurelia aurita</i>,
+          a miniature jellyfish-inspired robot is developed.
+
+          The robot comprises a headshell,
+          six tentacles,
+          a primary drive component,
+          two flywheel steering components,
+          a lightweight foam block,
+          a dsPIC control system,
+          and an energy supply component.
+
+          The tentacles are covered with a
+          0.1-mm-thick silicone membrane
+          and modeled in the shape of an umbrella.
+
+          The membrane is driven by a gear motor
+          to mimic the contraction and expansion
+          of the interior cavity of a jellyfish;
+          it exhibits the swimming behavior via water jet propulsion.
+
+          Three-dimensional swimming is achieved
+          by the flywheel steering components
+          following the conservation of angular momentum.
+
+          A built-in LoRa communication module
+          (433 MHz) enables a robust,
+          real-time connection between the robot
+          and a terrestrial console.
+
+          The small-sized,
+          lightweight jellyfish robot
+          has a diameter of 110 mm
+          and a height of 140 mm;
+          it weighs 318 g
+          and achieves autonomous swimming
+          with low power consumption.
+
+          The robot can be used for underwater signal relay,
+          environmental monitoring,
+          and geological investigations.
+
+        </p>
+
+
+
+        <p>
+
+          <strong>Index Terms:</strong>
+
+          Biologically-inspired robot,
+          embedded systems for robotic and automation,
+          mechanism design.
+
+        </p>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       KEY HIGHLIGHTS
+       ================================================== -->
+
+  <section class="gray">
+
+    <div class="container">
+
+
+      <h2>Key Highlights</h2>
+
+
+      <ul class="contributions">
+
+
+        <li>
+
+          A miniature jellyfish-inspired underwater robot
+          combining rigid mechanical components
+          with a flexible silicone membrane
+          is developed based on the morphology
+          and swimming mechanism of
+          <i>Aurelia aurita</i>.
+
+        </li>
+
+
+        <li>
+
+          A cylindrical cam and six-tentacle linkage mechanism
+          reproduces periodic contraction and expansion
+          for water-jet propulsion,
+          while two flywheel steering modules enable
+          three-dimensional attitude adjustment
+          based on conservation of angular momentum.
+
+        </li>
+
+
+        <li>
+
+          The robot integrates a dsPIC control system,
+          inertial sensing,
+          magnetic encoders,
+          LoRa underwater communication,
+          and dual-series PID attitude control
+          in a compact autonomous platform.
+
+        </li>
+
+
+        <li>
+
+          The prototype measures 110 mm in diameter
+          and 140 mm in height,
+          weighs 318 g,
+          reaches a maximum average swimming speed
+          of 5 cm/s,
+          and achieves a maximum deflection angle
+          of 25°.
+
+        </li>
+
+
+      </ul>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 1
+       ================================================== -->
+
+  <section>
+
+    <div class="container">
+
+
+      <h2>Structural Overview</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        在这里插入 Fig. 1：
+
+        <img
+          src="images/1.png"
+          alt="Structural Overview of Jellyfish Robot">
+        -->
+
+
+        <img
+        src="images/1.png"
+
+
+
+        <div class="caption">
+
+          <strong>
+            Fig. 1.
+          </strong>
+
+          Structural overview of jellyfish robot.
+
+          <strong>(a)</strong>
+          Front view with mechanical component layout.
+
+          <strong>(b)</strong>
+          Top view with electronic unit layout.
+
+          <strong>(c)</strong>
+          Section view with components.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 2
+       ================================================== -->
+
+  <section class="gray">
+
+    <div class="container">
+
+
+      <h2>Cylindrical Cam Mechanism</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/2.png"
+          alt="Cylindrical Cam Mechanism">
+        -->
+
+
+        <img
+        src="images/2.png"
+
+
+
+        <div class="caption">
+
+          <strong>
+            Fig. 2.
+          </strong>
+
+          Structure of cylindrical cam with reciprocating push rod.
+
+          <strong>(a)</strong>
+          Schematic.
+
+          <strong>(b)</strong>
+          3D model.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 3
+       ================================================== -->
+
+  <section>
+
+    <div class="container">
+
+
+      <h2>Push-Rod Motion</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/3.png"
+          alt="Movement States of Push Rod">
+        -->
+
+
+        <img
+        src="images/3.png"
+
+
+
+        <div class="caption">
+
+          <strong>
+            Fig. 3.
+          </strong>
+
+          Movement states of push rod.
+
+          <strong>(a)</strong>
+          Stretching
+
+          and
+
+          <strong>(b)</strong>
+          Retraction states.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 4
+       ================================================== -->
+
+  <section class="gray">
+
+    <div class="container">
+
+
+      <h2>Tentacle Linkage</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/4.png"
+          alt="Tentacle Linkage Scheme">
+        -->
+
+
+        <img
+        src="images/4.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Fig. 4.
+          </strong>
+
+          Tentacle linkage scheme.
+
+          <strong>(a)</strong>
+          Expansion
+
+          and
+
+          <strong>(b)</strong>
+          Contraction states.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 5
+       ================================================== -->
+
+  <section>
+
+    <div class="container">
+
+
+      <h2>Tentacle Kinematic Model</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/5.png"
+          alt="Schematic of Tentacles">
+        -->
+
+
+        <img
+        src="images/5.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Fig. 5.
+          </strong>
+
+          Schematic of tentacles.
+
+          <strong>(a)</strong>
+          Planar linkage vector diagram.
+
+          <strong>(b)</strong>
+          Maximum rotation angle of driven crank.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 6
+       ================================================== -->
+
+  <section class="gray">
+
+    <div class="container">
+
+
+      <h2>Flywheel Steering Component</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/6.png"
+          alt="Flywheel Steering Component">
+        -->
+
+
+        <img
+        src="images/6.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Fig. 6.
+          </strong>
+
+          Flywheel steering component.
+
+          <strong>(a)</strong>
+          3D model.
+
+          <strong>(b)</strong>
+          Left steering.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 7
+       ================================================== -->
+
+  <section>
+
+    <div class="container">
+
+
+      <h2>Buoyancy Equilibrium Design</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/7.png"
+          alt="Foam Block Installation">
+        -->
+
+
+        <img
+        src="images/7.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Fig. 7.
+          </strong>
+
+          Schematic of foam block installation.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 8
+       ================================================== -->
+
+  <section class="gray">
+
+    <div class="container">
+
+
+      <h2>Control System Hardware</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/8.png"
+          alt="Hardware Design">
+        -->
+
+
+        <img
+        src="images/8.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Fig. 8.
+          </strong>
+
+          Hardware design.
+
+          <strong>(a)</strong>
+          Block diagram of control system.
+
+          <strong>(b)</strong>
+          dsPIC control system.
+
+          <strong>(c)</strong>
+          LoRa module.
+
+          <strong>(d)</strong>
+          USB to TTL adapter.
+
+          <strong>(e)</strong>
+          Magnetic encoder.
+
+          <strong>(f)</strong>
+          OV7660 camera.
+
+          <strong>(g)</strong>
+          Gear motor.
+
+          <strong>(h)</strong>
+          Brushed DC motor.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 9
+       ================================================== -->
+
+  <section>
+
+    <div class="container">
+
+
+      <h2>Software Architecture</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/9.png"
+          alt="Programming Flowchart">
+        -->
+
+
+        <img
+        src="images/9.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Fig. 9.
+          </strong>
+
+          Programming flowchart.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FIGURE 10
+       ================================================== -->
+
+  <section class="gray">
+
+    <div class="container">
+
+
+      <h2>Motion Control Algorithm</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/10.png"
+          alt="Serial-Level PID Control Block Diagram">
+        -->
+
+
+        <img
+        src="images/10.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Fig. 10.
+          </strong>
+
+          Serial-level PID control block diagram.
+
+          Note:
+          u<sub>i</sub> — Desired position;
+
+          u<sub>o</sub> — Actual position;
+
+          u<sub>e1</sub> — Position error
+          (front and rear);
+
+          u<sub>e2</sub> — Position error
+          (left and right);
+
+          v<sub>i1</sub> — Desired speed
+          (front and rear);
+
+          v<sub>i2</sub> — Desired speed
+          (left and right);
+
+          v<sub>o1</sub> — Actual speed
+          (front and rear);
+
+          v<sub>o2</sub> — Actual speed
+          (left and right);
+
+          v<sub>e1</sub> — Speed error
+          (front and rear);
+
+          v<sub>e2</sub> — Speed error
+          (left and right);
+
+          v<sub>1</sub> — Calculated speed
+          (front and rear);
+
+          v<sub>2</sub> — Calculated speed
+          (left and right).
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+
+
+
+ 
+
+
+
+  <!-- ==================================================
+       FIGURE 13
+       ================================================== -->
+
+  <section>
+
+    <div class="container">
+
+
+      <h2>Underwater Experiments</h2>
+
+
+      <div class="figure">
+
+
+        <!--
+        <img
+          src="images/13.png"
+          alt="Underwater Experiments">
+        -->
+
+
+        <img
+        src="images/13.png">
+
+
+
+        <div class="caption">
+
+          <strong>
+            Fig. 11.
+          </strong>
+
+          Snapshots of experiments.
+
+          Tank size:
+          1 m (L) × 0.45 m (W) × 0.7 m (H).
+
+          <strong>(a)</strong>
+          Left steering.
+
+          <strong>(b)</strong>
+          Left and right steering.
+
+          <strong>(c)</strong>
+          Posture self-adjustment.
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       TECHNICAL SPECIFICATIONS
+       ================================================== -->
+
+  <section class="gray">
+
+    <div class="container">
+
+
+      <h2>Technical Specifications</h2>
+
+
+      <table class="spec-table">
+
+
+        <thead>
+
+          <tr>
+
+            <th>Name</th>
+
+            <th>Material / Value</th>
+
+            <th>Quantity</th>
+
+            <th>Weight (g)</th>
+
+          </tr>
+
+        </thead>
+
+
+        <tbody>
+
+
+          <tr>
+
+            <td>Tentacle</td>
+
+            <td>8200 resin</td>
+
+            <td>6</td>
+
+            <td>6</td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>Flywheel</td>
+
+            <td>Stainless steel</td>
+
+            <td>2</td>
+
+            <td>46</td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>Membrane</td>
+
+            <td>Silicone / 0.1 mm</td>
+
+            <td>1</td>
+
+            <td>10</td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>Power</td>
+
+            <td>Ni-Cd / 5 V, 700 mAh</td>
+
+            <td>1</td>
+
+            <td>50</td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>Control System</td>
+
+            <td>—</td>
+
+            <td>—</td>
+
+            <td>56</td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>Others</td>
+
+            <td>8200 resin</td>
+
+            <td>—</td>
+
+            <td>150</td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>Diameter</td>
+
+            <td>110 mm</td>
+
+            <td>—</td>
+
+            <td>—</td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>Height</td>
+
+            <td>140 mm</td>
+
+            <td>—</td>
+
+            <td>—</td>
+
+          </tr>
+
+
+          <tr>
+
+            <td>Total Weight</td>
+
+            <td>—</td>
+
+            <td>—</td>
+
+            <td>318</td>
+
+          </tr>
+
+
+        </tbody>
+
+
+      </table>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       SUMMARY AND OUTLOOK
+       ================================================== -->
+
+  <section>
+
+    <div class="container">
+
+
+      <h2>Summary and Outlook</h2>
+
+
+      <div class="section-text">
+
+
+        <p>
+
+          Inspired by the unique symmetrical body structure
+          and excellent athletic ability of
+          <i>Aurelia aurita</i>,
+          a miniature jellyfish-inspired robot
+          was designed and developed.
+
+          Experimental results demonstrate
+          low energy consumption of 10.5 W,
+          with a 5 V–700 mAh nickel-cadmium battery
+          providing approximately 20 min of operation.
+
+          The robot achieves a maximum average swimming speed
+          of 5 cm/s
+          and a maximum deflection angle of 25°,
+          demonstrating relatively good maneuverability.
+
+          The developed robot is compact in both size and weight
+          compared with conventional rigid jellyfish robots.
+
+          Future work will focus on achieving
+          autonomous swimming in arbitrary directions
+          and maintaining buoyancy equilibrium
+          at different attitudes and positions.
+
+          The reserved onboard camera will also be used
+          for underwater image acquisition
+          and path planning,
+          while soft intelligent materials
+          will be further integrated
+          to improve the miniaturization
+          and intelligence of the robotic platform.
+
+        </p>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================================
+     VIDEO DEMONSTRATIONS
+     ================================================== -->
+
+     <style>
+
+      .video-section {
+        padding: 45px 0 55px;
+      }
+    
+      .video-section .container {
+        width: min(1000px, 92%);
+        margin: 0 auto;
+      }
+    
+      .video-section h2 {
+        margin-top: 0;
+        margin-bottom: 28px;
+        font-size: 1.9rem;
+        text-align: center;
+      }
+    
+      .video-grid {
+        display: grid;
+    
+        /* 一行三个视频 */
+        grid-template-columns: repeat(3, 240px);
+    
+        gap: 200px;
+    
+        justify-content: center;
+        align-items: start;
+    
+        margin: 0 auto;
+      }
+    
+      .video-card {
+        width: 240px;
+      }
+    
+      .video-card video {
+        width: 420px;
+        height: auto;
+    
+        display: block;
+    
+        border-radius: 6px;
+        background: #000;
+      }
+    
+      /* 平板 */
+      @media (max-width: 820px) {
+    
+        .video-grid {
+          grid-template-columns: repeat(2, 240px);
+        }
+    
+      }
+    
+      /* 手机 */
+      @media (max-width: 540px) {
+    
+        .video-grid {
+          grid-template-columns: 240px;
+        }
+    
+      }
+    
+    </style>
+    
+    
+    <section class="video-section">
+    
+      <div class="container">
+    
+        <h2>Video Demonstrations</h2>
+    
+        <div class="video-grid">
+    
+    
+          <!-- Video 1 -->
+    
+          <div class="video-card">
+    
+            <video controls preload="metadata">
+    
+              <source src="video/2.mp4">
+    
+              Your browser does not support the video tag.
+    
+            </video>
+    
+          </div>
+    
+    
+          <!-- Video 2 -->
+    
+          <div class="video-card">
+    
+            <video controls preload="metadata">
+    
+              <source src="video/3.mp4">
+    
+              Your browser does not support the video tag.
+    
+            </video>
+    
+          </div>
+    
+    
+          <!-- Video 3 -->
+    
+          <div class="video-card">
+    
+            <video controls preload="metadata">
+    
+              <source src="video/4.mp4">
+    
+              Your browser does not support the video tag.
+    
+            </video>
+    
+          </div>
+    
+    
+
+    
+    
+        </div>
+    
+      </div>
+    
+    </section>
+
+
+
+
+
+
+  <!-- ==================================================
+       BIBTEX
+       ================================================== -->
+
+  <section>
+
+    <div class="container">
+
+
+      <h2>BibTeX</h2>
+
+
+      <pre>
+@article{wang2023design,
+  title   = {Design and Implementation of a Miniature Jellyfish-Inspired Robot},
+  author  = {Wang, Wei and Li, Weiqiang and Xu, Jinchang and Dong, Jiawei and Xiang, Chaoqun and Guan, Yisheng and Zhang, Tao},
+  journal = {IEEE Robotics and Automation Letters},
+  volume  = {8},
+  number  = {6},
+  pages   = {3134--3141},
+  year    = {2023},
+  month   = {June},
+  doi     = {10.1109/LRA.2023.3265585}
+}
+      </pre>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==================================================
+       FOOTER
+       ================================================== -->
+
+  <footer>
+
+
+    © 2023 Wei Wang · Project Page
+
+
+    <br>
+
+
+    <a href="../../index.html">
+
+      Back to Homepage
+
+    </a>
+
+
+  </footer>
+
+
+</body>
+
+</html>
