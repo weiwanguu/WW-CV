@@ -93,6 +93,16 @@
       border-radius: 50%;
       border: 6px solid #f0f3f7;
       box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      display: block;
+    }
+
+    .photo-credit {
+      width: 220px;
+      margin-top: 10px;
+      text-align: center;
+      font-size: 0.78rem;
+      line-height: 1.45;
+      color: #888;
     }
 
     .hero h1 {
@@ -329,8 +339,10 @@
         text-align: center;
       }
 
-      .profile-photo {
-        margin: 0 auto;
+      .profile-photo,
+      .photo-credit {
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .buttons {
@@ -398,7 +410,11 @@
 
       <div>
         <!-- 把 photo.jpg 替换成你的个人照片 -->
-        <img src="images/photo.png" alt="Wei Wang" class="profile-photo">
+        <img src="images/dm.jpg" alt="Wei Wang" class="profile-photo">
+        <div class="photo-credit">
+          Credit to Dudu<br>
+          Xuhui District, Shanghai, 2026
+        </div>
       </div>
 
       <div>
@@ -440,6 +456,7 @@
              href="https://robot.tongji.edu.cn/index.htm"
              target="_blank">
              同济大学智能机器人与计算感知实验室
+             Intelligent robotics and computational perception lab
           </a>
         </div>
 
