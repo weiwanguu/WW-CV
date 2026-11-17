@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FTFNet: A Frequency–Time Fusion Network for Slip Prediction in Dexterous Robotic Manipulation">
+  <title>FTFNet: A Frequency–Time Fusion Network for Slip Prediction in Dexterous Robotic Manipulation</title>
+
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #222;
+      background: #ffffff;
+      line-height: 1.7;
+    }
+    a { color: #2563a6; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { width: min(1000px, 92%); margin: 0 auto; }
+
+    .hero {
+      padding: 70px 0 45px;
+      text-align: center;
+      background: #fafbfc;
+      border-bottom: 1px solid #eeeeee;
+    }
+    .paper-title {
+      max-width: 1050px;
+      margin: 0 auto;
+      font-size: 2.5rem;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+    .authors { margin-top: 25px; font-size: 1.08rem; line-height: 1.9; }
+    .authors a { margin: 0 5px; white-space: nowrap; }
+    .affiliations { margin-top: 12px; color: #666; font-size: 0.95rem; line-height: 1.7; }
+    .venue { margin-top: 18px; font-weight: 600; font-size: 1.05rem; color: #444; }
+
+    .buttons {
+      margin-top: 28px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 7px;
+      background: #222;
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .button:hover {
+      text-decoration: none;
+      transform: translateY(-1px);
+      opacity: 0.88;
+    }
+
+    section { padding: 55px 0; }
+    section.gray { background: #f8f9fa; }
+    h2 {
+      margin-top: 0;
+      margin-bottom: 25px;
+      font-size: 1.9rem;
+      text-align: center;
+    }
+    .section-text {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: justify;
+      font-size: 1.02rem;
+    }
+    .contributions { max-width: 880px; margin: 0 auto; }
+    .contributions li { margin-bottom: 14px; }
+
+    .figure {
+      margin: 0 auto;
+      max-width: 920px;
+      text-align: center;
+    }
+    .figure img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+    .caption {
+      max-width: 900px;
+      margin: 14px auto 0;
+      color: #666;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      text-align: justify;
+    }
+
+    pre {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 22px;
+      overflow-x: auto;
+      background: #f2f4f6;
+      border-radius: 8px;
+      font-family: Consolas, Monaco, monospace;
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    footer {
+      padding: 35px 15px;
+      text-align: center;
+      color: #777;
+      border-top: 1px solid #eeeeee;
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 720px) {
+      .paper-title { font-size: 1.8rem; }
+      .hero { padding-top: 45px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="hero">
+    <div class="container">
+      <h1 class="paper-title">
+        FTFNet: A Frequency–Time Fusion Network for Slip Prediction in Dexterous Robotic Manipulation
+      </h1>
+
+      <div class="authors">
+        <a href="#" target="_blank">Xingyu Li<sup>1,2,3</sup></a>
+        <a href="#" target="_blank">Yijie Luo<sup>1,2,3</sup></a>
+        <a href="../../index.html" target="_blank"><strong>Wei Wang</strong><sup>1,2,3</sup></a>
+        <a href="#" target="_blank">Qian Xie<sup>1,2,3</sup></a>
+        <a href="#" target="_blank">Zhipeng Wang<sup>2,3,4</sup></a>
+        <a href="#" target="_blank">Zhongjie Wang<sup>2,3,4</sup></a>
+        <a href="#" target="_blank">Yanmin Zhou<sup>2,3,4</sup></a>
+        <a href="#" target="_blank">Bin He<sup>2,3,4</sup></a>
+      </div>
+
+      <div class="affiliations">
+        <sup>1</sup> Shanghai Research Institute for Intelligent Autonomous Systems, Tongji University, Shanghai, China<br>
+        <sup>2</sup> The State Key Laboratory of Autonomous Intelligent Unmanned Systems, Shanghai, China<br>
+        <sup>3</sup> The Frontiers Science Center for Intelligent Autonomous Systems, Shanghai, China<br>
+        <sup>4</sup> The College of Electronics and Information Engineering, Tongji University, Shanghai, China
+      </div>
+
+      <div class="venue">
+        IEEE/ASME Transactions on Mechatronics, 2026
+      </div>
+
+      <div class="buttons">
+        <a class="button" href="https://doi.org/10.1109/tmech.2026.3676123" target="_blank">Paper</a>
+        <a class="button" href="https://github.com/LTD-project/FTFNet" target="_blank">Code</a>
+        <a class="button" href="../../index.html">Homepage</a>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <h2>Abstract</h2>
+      <div class="section-text">
+        <p>
+          Slip prediction is critical for stable dexterous grasping, yet tactile signals are noisy and evolve rapidly during contact. This paper presents FTFNet, a frequency–time fusion network that jointly models frequency-domain and time-domain tactile features for slip prediction in dexterous robotic manipulation. By fusing complementary representations, FTFNet captures both transient slip cues and longer temporal trends, supporting more reliable grasp adjustment under changing contact conditions.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="gray">
+    <div class="container">
+      <h2>Key Contributions</h2>
+      <ul class="contributions">
+        <li>
+          A frequency–time fusion architecture for slip prediction, combining frequency-domain cues with temporal tactile dynamics during dexterous manipulation.
+        </li>
+        <li>
+          A tactile-based slip prediction pipeline designed for dexterous robotic grasping, targeting early detection of unstable contact.
+        </li>
+        <li>
+          Experimental evaluation on dexterous manipulation tasks, demonstrating the benefit of joint frequency–time modeling over using a single domain alone.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Architecture</h2>
+      <div class="figure">
+        <img src="images/FTFNet.png" alt="FTFNet architecture">
+        <div class="caption">
+          Fig. 1. Architecture of the proposed FTFNet, which fuses frequency-domain and time-domain tactile features for slip prediction.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gray">
+    <div class="container">
+      <h2>BibTeX</h2>
+      <pre>
+@article{li2026ftfnet,
+  title   = {FTFNet: A Frequency--Time Fusion Network for Slip Prediction in Dexterous Robotic Manipulation},
+  author  = {Li, Xingyu and Luo, Yijie and Wang, Wei and Xie, Qian and Wang, Zhipeng and Wang, Zhongjie and Zhou, Yanmin and He, Bin},
+  journal = {IEEE/ASME Transactions on Mechatronics},
+  year    = {2026},
+  doi     = {10.1109/tmech.2026.3676123}
+}
+      </pre>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Wei Wang · Project Page
+    <br>
+    <a href="../../index.html">Back to Homepage</a>
+  </footer>
+
+</body>
+</html>
